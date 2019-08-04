@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Default Character</title>
+	<link rel="stylesheet" type="text/css" href="css/pages.css">
+	<link rel="stylesheet" type="text/css" href="css/page1.css">
+	<link rel="stylesheet" type="text/css" href="css/page2.css">
+	<link rel="stylesheet" type="text/css" href="css/page3.css">
+
+</head>
+<body>
+<div id="page-1" class="page">
+	<div id="basic-info">
+		<div id="character">
+			<div>
+				<input type="text" name="char-name"/>
+				<span class="label">Character Name</span>
+			</div>
+			<div>
+				<input type="text" name="level">
+				<span class="label">Level</span>
+			</div>
+		</div>
+		<div id="character-info">
+			<div id="row-1" class="row">
+				<div>
+					<input type="text" name="race-class"/>
+					<span class="label">Race/Class</span>
+				</div>
+				<div>
+					<input type="text" name="background"/>
+					<span class="label">Background</span>
+				</div>
+				<div>
+					<input type="text" name="player-name"/>
+					<span class="label">Player Name</span>
+				</div>
+			</div>
+			<div id="row-2" class="row">
+				<div>
+					<input type="text" name="exp"/>
+					<span class="label">Experience</span>
+				</div>
+				<div>
+					<input type="text" name="alignment"/>
+					<span class="label">Alignment</span>
+				</div>
+				<div>
+					<input type="text" name="deity">
+					<span class="label">Deity</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="top-bar">
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="proficiency" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Proficiency Bonus</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="initiative" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Initiative Bonus</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="passive-perception" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Passive Perception</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="ac" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Armor Class</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="speed" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Speed</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="test" name="spell-dc" maxlength="2" size="2" />
+			</div>
+			<div class="label-frame">
+				<span class="label">Spell Save DC</span>
+			</div>
+		</div>
+		<div class="box">
+			<div class="input-frame">
+				<input type="text" name="insperation"/>
+			</div>
+			<div class="label-frame">
+				<span class="label">Insperation</span>
+			</div>
+		</div>
+	</div>
+	<div id="attributes">
+		<div id="str" class="box">
+			<span class="label">Strength</span>
+			<input type="text" class="att" name="str" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="str-mod" maxlength="2" size="2" />
+		</div>
+		<div id="dex" class="box">
+			<span class="label">Dexterity</span>
+			<input type="text" class="att" name="dex" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="dex-mod" maxlength="2" size="2" />
+		</div>
+		<div id="con" class="box">
+			<span class="label">Constitution</span>
+			<input type="text" class="att" name="con" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="con-mod" maxlength="2" size="2" />
+		</div>
+		<div id="int" class="box">
+			<span class="label">Intelligence</span>
+			<input type="text" class="att" name="int" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="int-mod" maxlength="2" size="2" />
+		</div>
+		<div id="wis" class="box">
+			<span class="label">Wisdom</span>
+			<input type="text" class="att" name="wis" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="wis-mod" maxlength="2" size="2" />
+		</div>
+		<div id="cha" class="box">
+			<span class="label">Charisma</span>
+			<input type="text" class="att" name="cha" maxlength="2" size="2" />
+			<input type="text" class="att-mod" name="cha-mod" maxlength="2" size="2" />
+		</div>
+	</div>
+	<div id="saves-skills">
+		<div id="spell-att" class="box">
+			<select name="spell-att">
+				<option value="str">Strength</option>
+				<option value="dex">Dexterity</option>
+				<option value="con">Constitution</option>
+				<option value="int">Intelligence</option>
+				<option value="wis">Wisdom</option>
+				<option value="cha">Charisma</option>
+			</select>
+			<span class="label">Spell Casting Attribute</span>
+		</div>
+		<div id="saves" class="box">
+			<div>
+				<span class="sub-label">Prof</span>
+			</div>
+			<div id="str-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="str-save" maxlength="2" size="2" />
+				<span class="label">Strength</span>
+			</div>
+			<div id="dex-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="dex-save" maxlength="2" size="2" />
+				<span class="label">Dexterity</span>
+			</div>
+			<div id="con-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="con-save" maxlength="2" size="2" />
+				<span class="label">Constitution</span>
+			</div>
+			<div id="int-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="int-save" maxlength="2" size="2" />
+				<span class="label">Strength</span>
+			</div>
+			<div id="wis-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="wis-save" maxlength="2" size="2" />
+				<span class="label">Wisdom</span>
+			</div>
+			<div id="cha-save" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="text" name="cha-save" maxlength="2" size="2" />
+				<span class="label">Charisma</span>
+			</div>
+			<span class="label">Saving Throws</span>
+		</div>
+		<div id="skills" class="box">
+			<div>
+				<span class="sub-label">Prof</span>
+				<span class="sub-label">Expr</span>
+			</div>
+			<div id="acrobatics-skill" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="acrobatics-skill" maxlength="3" size="3" />
+				<span class="label">Acrobtics (Dex)</span>
+			</div>
+			<div id="animal-handeling-skill" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="animal-handeling-skill" maxlength="3" size="3" />
+				<span class="label">Animal Handeling (Wis)</span>
+			</div>
+			<div id="arcana-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="arcana-skill" maxlength="3" size="3" />
+				<span class="label">Arcana (Int)</span>
+			</div>
+			<div id="athletics-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="athletics-skill" maxlength="3" size="3" />
+				<span class="label">Athletics (Str)</span>
+			</div>
+			<div id="deception-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="deception-skill" maxlength="3" size="3" />
+				<span class="label">Deception (Cha)</span>
+			</div>
+			<div id="history-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="history-skill" maxlength="3" size="3" />
+				<span class="label">History (Int)</span>
+			</div>
+			<div id="insight-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="insight-skill" maxlength="3" size="3" />
+				<span class="label">Insight (Wis)</span>
+			</div>
+			<div id="intimidation-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="intimidation-skill" maxlength="3" size="3" />
+				<span class="label">Intimidation (Cha)</span>
+			</div>
+			<div id="investigation-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="investigation-skill" maxlength="3" size="3" />
+				<span class="label">Investigation (Int)</span>
+			</div>
+			<div id="medicine-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="medicine-skill" maxlength="3" size="3" />
+				<span class="label">Medicine (Wis)</span>
+			</div>
+			<div id="nature-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="nature-skill" maxlength="3" size="3" />
+				<span class="label">Nature (Wis)</span>
+			</div>
+			<div id="perception-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="perception-skill" maxlength="3" size="3" />
+				<span class="label">Perception (Wis)</span>
+			</div>
+			<div id="performance-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="performance-skill" maxlength="3" size="3" />
+				<span class="label">Performance (Cha)</span>
+			</div>
+			<div id="persuasion-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="persuasion-skill" maxlength="3" size="3" />
+				<span class="label">Persuasion (Cha)</span>
+			</div>
+			<div id="religion-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="religion-skill" maxlength="3" size="3" />
+				<span class="label">Religion (Int)</span>
+			</div>
+			<div id="sleight-hand-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="sleight-hand-skill" maxlength="3" size="3" />
+				<span class="label">Sleight of Hand (Dex)</span>
+			</div>
+			<div id="stealth-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="stealth-skill" maxlength="3" size="3" />
+				<span class="label">Stealth (Dex)</span>
+			</div>
+			<div id="survival-skil" class="box">
+				<input type="checkbox" name="prof" />
+				<input type="checkbox" name="exp" />
+				<input type="text" name="survival-skill" maxlength="3" size="3" />
+				<span class="label">Survival (Wis)</span>
+			</div>
+			<span class="label">Skills</span>
+		</div>
+	</div>
+	<div id="status" class="box">
+		<div id="conditions" class="box">
+			<textarea name="conditions" rows="5" ></textarea>
+			<span class="label">Conditions</span>
+		</div>
+		<div id="boons" class="box">
+			<textarea name="boons" rows="5" ></textarea>
+			<span class="label">Boons</span>
+		</div>
+		<div id="health" class="box">
+			<div id="death-saves" class="box">
+				<div id="successes">
+					<span class="sub-label">Success</span>
+					<div id="success-num">
+						<input type="checkbox" name="success-1" />
+						<input type="checkbox" name="success-2" />
+						<input type="checkbox" name="success-3" />
+					</div>
+				</div>
+				<div id="failures" class="box">
+					<span class="sub-label">Failure</span>
+					<div id="failure-num">
+						<input type="checkbox" name="failure-1" />
+						<input type="checkbox" name="failure-2" />
+						<input type="checkbox" name="failure-3" />
+					</div>
+				</div>
+				<span class="label">Death Saves</span>
+			</div>
+			<div id="hit-dice" class="box">
+				<span class="label">Current</span>
+				<input type="text" name="current-hd"/>
+				<input type="text" name="hit-dice"/>
+				<span class="label">Hit Dice</span>
+			</div>
+			<div id="hit-points" class="box">
+				<div id="temp-health">
+					<input type="text" name="temp-health" />
+					<span class="label">Temporary Health</span>
+				</div>
+				<div id="current-health">
+					<input type="text" name="current-health" />
+					<span class="label">Current Health</span>
+				</div>
+				<div id="max-health">
+					<input type="text" name="max-health" />
+					<span class="label">Maximum Health</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="proficiencies">
+		<div id="weapons-armor">
+			<textarea name="weapons-armor" ></textarea>
+			<span class="label">Weapons & Armor</span>
+		</div>
+		<div id="tools">
+			<textarea name="tools" ></textarea>
+			<span class="label">Tools</span>
+		</div>
+		<div id="languages">
+			<textarea name="languages" ></textarea>
+			<span class="label">Known Languages</span>
+		</div>
+		<span class="label">Proficiencies</span>
+	</div>
+	<div id="attacks-spells" class="box">
+		<table id="attacks">
+			<tr>
+				<th>Name</th>
+				<th>Base Stat</th>
+				<th>Bonus/DC</th>
+				<th>Damage Dice</th>
+				<th>Damage Type</th>
+			</tr>
+		</table>
+		<div id="add-attack">
+			<span class="label title">Add a new attack</span>
+			<div id="attack-form">
+				<div id="att-name">
+					<input type="text" name="name"/>
+					<span class="label">Name of the attack</span>
+				</div>
+				<div id="attack-stack">
+					<select name="stat">
+						<option value="str">Strength</option>
+						<option value="dex">Dexterity</option>
+						<option value="con">Constitution</option>
+						<option value="int">Intelligence</option>
+						<option value="wis">Wisdom</option>
+						<option value="cha">Charisma</option>
+					</select>
+					<span class="label">Choose the base Stat</span>
+				</div>
+				<div id="attack-type">
+					<select name="type">
+						<option value="toHit">Roll to hit</option>
+						<option value="save">Save DC</option>
+					</select>
+					<span class="label">Choose the type of attack</span>
+				</div>
+				<div id="attack-prof">
+					<input type="checkbox" name="proficiency">
+					<span class="sub-label">Add Proficency</span>
+				</div>
+				<div id="attack-dc" style="display: none;">
+					<input type="text" name="dc"/>
+					<input type="checkbox" name="spell-dc"/>
+					<span class="sub-label">Use Spell DC?</span>
+					<span class="label">Set DC</span>
+				</div>
+				<div id="attack-dice">
+					<input type="text" name="dice"/>
+					<span class="label">Enter Dice</span>
+				</div>
+				<div id="attack-bonus">
+					<input type="text" name="bonus"/>
+					<span class="label">Bonus</span>
+				</div>
+				<div id="attack-dmg-type" >
+					<input type="text" name="dmg-type">
+					<span class="label">Damage Type</span>
+				</div>
+				<button class="button">Add Attack</button>
+			</div>
+		</div>
+	</div>
+	<div id="charges">
+		<div id="charge-1">
+			<input type="text" name="charge-1"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<div id="charge-2">
+			<input type="text" name="charge-2"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<div id="charge-3">
+			<input type="text" name="charge-3"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<div id="charge-4">
+			<input type="text" name="charge-4"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<div id="charge-5">
+			<input type="text" name="charge-5"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<div id="charge-6">
+			<input type="text" name="charge-6"/>
+			<input type="checkbox" name="1"/>
+			<input type="checkbox" name="2"/>
+			<input type="checkbox" name="3"/>
+			<input type="checkbox" name="4"/>
+			<input type="checkbox" name="5"/>
+			<input type="checkbox" name="6"/>
+			<input type="checkbox" name="7"/>
+			<input type="checkbox" name="8"/>
+			<input type="checkbox" name="9"/>
+			<input type="checkbox" name="10"/>
+			<button class="button">empty</button>
+			<button class="button">fill</button>
+		</div>
+		<span class="label">Class Resources, Ammo, Charges</span>
+	</div>
+	<div id="features">
+		<textarea name="features" rows="11"></textarea>
+		<span class="label">Features and Traits</span>
+	</div>
+
+</div>
+<div id="page-2" class="page">
+	<div id="equipment" class="box">
+		<div class="col-1">
+			<table>
+				<tr>
+					<th>Equipment</th>
+					<th>Weight</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-2">
+			<table>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-3">
+			<table>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"/></td>
+					<td><input type="text" name="weight"></td>
+				</tr>
+				<tr>
+					<th>Total Weight</th>
+					<td><input type="text" name="total-weight"></td>
+				</tr>
+			</table>
+			<div id="encumberance" class="box">
+				<div id="base">					
+					<span class="label">Base (STR X 5)</span>
+					<input type="text" name="base-encumberance">
+				</div>
+				<div id="encumbered">
+					<span class="label">Encumbered (STR X 10)</span>
+					<input type="text" name="encumbered-encumberance">
+				</div>
+				<div id="h-encumbered">
+					<span class="label">H. Encumbered (STR X 15)</span>
+					<input type="text" name="h-encumbered-encumberance">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="mount-pet" class="box">
+		<div id="mount-name">
+			<input type="text" name="mount-name"/>
+			<span class="label">Name</span>
+		</div>
+		<div id="mount-type">
+			<input type="text" name="mount-type"/>
+			<span class="label">Type</span>
+		</div>
+		<div id="mount-health">
+			<input type="text" name="mount-health"/>
+			<span class="label">Health</span>
+		</div>
+		<div id="mount-ac">
+			<input type="text" name="mount-ac"/>
+			<span class="label">AC</span>
+		</div>
+		<div id="mount-speed">
+			<input type="text" name="mount-speed"/>
+			<span class="label">Speed</span>
+		</div>
+		<div id="mount-notes">
+			<textarea name="mount-notes"></textarea>
+			<span class="label">Mount Attacks and Notes</span>
+		</div>
+		<span class="label">Mount/Pet</span>
+	</div>
+	<div id="backstory" class="box">
+		<textarea name="backstory" rows="60"></textarea>
+		<span class="label">Character Backstory</span>
+	</div>
+	<div id="apperance" class="box">
+		<input type="file" name="char-img" accept="image/gif, image/jpeg, image/png">
+		<div id="char-img"></div>
+		<span class="label">Character Apperance</span>
+	</div>
+	<div id="allies-organizations" class="box">
+		<div id="name">
+			<input type="text" name="name"/>
+			<span class="label">Name</span>
+		</div>
+		<div id="symbol" class="box">
+			<input type="file" name="alli-img" accept="image/gif, image/jpeg, image/png">
+			<div id="alli-img"></div>
+			<span class="label">Symbol</span>
+		</div>
+		<textarea name="allies-organizations"></textarea>
+		<span class="label">Allies and Organizations</span>
+	</div>
+	<div id="personality">
+		<div id="personality-traits" class="box">
+			<textarea name="personality-traits"></textarea>
+			<span class="label">Personality Traits</span>
+		</div>
+		<div id="ideals" class="box">
+			<textarea name="ideals"></textarea>
+			<span class="label">Ideals</span>
+		</div>
+		<div id="bonds" class="box">
+			<textarea name="bonds"></textarea>
+			<span class="label">Bonds</span>
+		</div>
+		<div id="flaws" class="box">
+			<textarea name="flaws"></textarea>
+			<span class="label">Flaws</span>
+		</div>
+	</div>
+	<div id="notes" class="box">
+		<textarea name="notes"></textarea>
+		<span class="label">Notes</span>
+	</div>
+</div>
+<div id="page-3" class="page">
+	<div id="spell-info" class="box">
+		<div id="class">
+			<input type="text" name="class"/>
+			<span class="label">Spellcasting Class</span>
+		</div>
+		<div id="att">
+			<input type="text" name="att"/>
+			<span class="label">Spell Casting Attribute</span>
+		</div>
+		<div id="dc">
+			<input type="text" name="dc"/>
+			<span class="label">Spell Save DC</span>
+		</div>
+		<div id="bonus">
+			<input type="text" name="bonus">
+			<span class="label">Spell Attack Bonus</span>
+		</div>
+	</div>
+	<div id="spells">
+		<div id="col-1" class="col">
+			<div id="cantrips">
+				<div class="title box">
+					<div>
+						<span class="level">0</span>
+					</div>
+					<div>
+						<span class="label">Cantrips</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>
+			</div>
+			<div id="level-1">
+				<div class="title box">
+					<div>
+						<span class="level">1</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-1" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-1"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<span class="sub-label">
+						Prepared
+					</span>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>			
+			</div>
+			<div id="level-2">
+				<div class="title box">
+					<div>
+						<span class="level">2</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-2" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-2"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div id="col-2" class="col">
+			<div id="level-3">
+				<div class="title box">
+					<div>
+						<span class="level">3</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-3" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-3"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>			
+			</div>
+			<div id="level-4">
+				<div class="title box">
+					<div>
+						<span class="level">4</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-4" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-4"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>				
+			</div>
+			<div id="level-5">
+				<div class="title box">
+					<div>
+						<span class="level">5</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-5" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-5"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div id="col-3" class="col">
+			<div id="level-6">
+				<div class="title box">
+					<div>
+						<span class="level">6</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-6" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-6"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>				
+			</div>
+			<div id="level-7">
+				<div class="title box">
+					<div>
+						<span class="level">7</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-7" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-7"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>			
+			</div>
+			<div id="level-8">
+				<div class="title box">
+					<div>
+						<span class="level">8</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-8" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-8"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>
+			</div>
+			<div id="level-9">
+				<div class="title box">
+					<div>
+						<span class="level">9</span>
+					</div>
+					<div id="total-slots">
+						<input type="text" name="total-9" maxlength="2" size="2" />
+						<span class="sub-label">Slots Total</span>
+					</div>
+					<div>
+						<div id="slots">
+							<input type="checkbox" name="slot-9"/>
+						</div>
+						<span class="sub-label">Slots Remaining</span>
+					</div>
+				</div>
+				<div class="spells box">
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+					<div class="spell">
+						<input type="checkbox" name="preped"/>
+						<input type="text" name="spell-name"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

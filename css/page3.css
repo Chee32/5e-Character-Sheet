@@ -1,0 +1,111 @@
+#page-3 {
+	display: flex;
+  	flex-direction: column;
+	align-items: center;
+}
+
+/*Spell info*/
+#spell-info {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+#spell-info > div {
+    margin: 20px 20px;
+}
+
+#spell-info input {
+	border-bottom: 1px solid black;
+}
+
+/*Spells*/
+#spells {
+	display: flex;
+}
+
+#spells .col {
+	margin: 0px 20px;
+}
+
+.col > div {
+	margin-bottom: 20px;
+}
+
+#spells input[type="text"] {
+	border-bottom: 1px solid black;
+	width: 90%;
+	font-size: 18px;
+}
+
+#spells #cantrips input[type="text"] {
+	width: 100%;
+}
+
+#spells .title {
+	display: flex;
+	align-items: center;
+	min-width: 300px;
+	border: 3px solid black;
+	border-left: 2px dashed black;
+    border-right: 2px dashed black;
+	height: 58px;
+	position: relative;
+	padding: 5px 0px;
+}
+
+
+.title div {
+	margin: 0px 10px;
+}
+
+.title .level {
+	padding: 5px;
+}
+
+.title input[type="text"] {
+	width: 25px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.title .sub-label {
+	font-size: 12px;
+	display: block;
+    text-align: center;
+}
+
+.title div:last-child {
+	flex-grow: 2;
+}
+
+.title #total-slots {
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.title #total-slots input {
+	border: none;
+}
+
+.title #slots {
+	display: block;
+	width: 100%;
+}
+
+#spells .spells {
+	border: 1px solid black;
+	border-top: none;
+    border-radius: 0px;
+    width: 82%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+#spells .spells .sub-label {
+	font-size: 11px;
+    font-weight: bold;
+    margin-left: -10px;
+}
