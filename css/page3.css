@@ -7,15 +7,76 @@
 /*Spell info*/
 #spell-info {
 	display: flex;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 #spell-info > div {
     margin: 20px 20px;
 }
 
+#spell-info .box {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 50px;
+	padding: 15px;
+	position: relative;
+}
+
+#spell-info .input-frame {
+	border: 5px double black;
+	box-shadow: 0 1px 3px 0px black;
+	background: #fff;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    padding: 15px;
+    position: relative;
+    z-index: 100;
+}
+
 #spell-info input {
-	border-bottom: 1px solid black;
+	width: 90%;
+    height: 90%;
+    font-size: 24px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+
+#spell-info .label-frame {
+	border: 3px solid black;
+	border-radius: 7px;
+    width: 148px;
+    height: 35px;
+    background-size: cover;
+    padding: 10px;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: -26px;
+}
+
+#spell-info .label {
+	margin-top: 10px;
+}
+
+#class .input-frame {
+	width: 120px;
+    height: 20px;
+    margin-top: 28px;
+}
+
+#class input {
+	width: 90%;
+}
+
+#spell-info input[name="att"] {
+	text-transform:capitalize;
 }
 
 /*Spells*/
@@ -56,6 +117,7 @@
 
 .title div {
 	margin: 0px 10px;
+	margin-bottom: 10px;
 }
 
 .title .level {
@@ -95,6 +157,7 @@
 }
 
 #spells .spells {
+	position: relative;
 	border: 1px solid black;
 	border-top: none;
     border-radius: 0px;
@@ -108,4 +171,6 @@
 	font-size: 11px;
     font-weight: bold;
     margin-left: -10px;
+    position: absolute;
+    top: 0px;
 }

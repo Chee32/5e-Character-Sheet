@@ -28,3 +28,77 @@ input[type=number]::-webkit-outer-spin-button {
 .label {
 	display: block;
 }
+
+#menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#menu #menu-toggle div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  position: relative;
+  z-index: 1;
+}
+
+#menu #menu-toggle .bar1, #menu #menu-toggle .bar2, #menu #menu-toggle .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#menu #menu-toggle.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#menu #menu-toggle.change .bar2 {opacity: 0;}
+
+#menu #menu-toggle.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#menu #menu-buttons {
+  display: none;
+  left: -50px;
+  top: -20px;
+  position: absolute;
+  width: 105px;
+  height: 80px;
+}
+
+#menu #menu-buttons #load {
+  position: absolute;
+  left: -30px;
+  top: 10px;
+}
+
+#menu #menu-buttons #save {
+  position: absolute;
+  left: -16px;
+  top: 49px;
+}
+
+#menu #menu-buttons #locker {
+  position: absolute;
+  left: 36px;
+  top: 74px;
+}
+
+#menu #menu-buttons #locker .unlocked {
+  text-shadow: 0px 0px 4px green;
+  color: lightgreen;
+  font-weight: bold;
+}
+
+#menu #menu-buttons #locker .locked {
+  text-shadow: 0px 0px 2px red;
+  color: red;
+  font-weight: bold;
+}
