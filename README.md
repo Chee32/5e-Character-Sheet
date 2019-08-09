@@ -19,7 +19,10 @@ The ones that don't change but you might think should are:
 ### How to use this sheet.
 The main idea behind this sheet is that you can set your attribues and the skills will auto populate based on the values.  So the idea is that you set your proficency and then your scores and the most of the sheet will fill itself out.
 
-To save the sheet, click the bars in the upper right corner and a JSON will be downloaded.  Put this JSON (named savedSheet.json) into the sheet folder of the project.  Then you can open index.html and your sheet will populate based on the json.
+I also included the ability to lock the sheet.  It stops the scripts from running on the sheet if you want to calculate all of your information yourself.
+To turn on the lock, click the bars in the upper right corner and click lock.  This has to be set every time you load up the sheet.
+
+To save the sheet, click the bars in the upper right corner and click save.  A JSON will be downloaded.  Put this JSON (named savedSheet.json) into the sheet folder of the project.  Then you can open index.html and your sheet will populate based on the json.
 
 To change the images upload your images into the imgs folder.  For the Character Apperance name the file Character.jpeg. For the Alliance Symbol name the file Symbol.jpeg.  If you want to change this you have to go into the css and change the field.
 
