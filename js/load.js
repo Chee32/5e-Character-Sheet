@@ -5,7 +5,8 @@ function loadNewSheet(argument) {
 $(document).ready(function (argument) {
 
 	//Change the title to the character name
-	document.title = loadJson.page1.basic_info.char_name;
+	if (loadJson.page1.basic_info.char_name)
+		document.title = loadJson.page1.basic_info.char_name;
 
 	//Load Basic Info
 	$('#page-1 #basic-info input[name="char-name"]').val(loadJson.page1.basic_info.char_name);
