@@ -1,5 +1,5 @@
-# DnD 5e Modern Character Sheet
-### A New and Modern Character Sheet for 5th edition Dungeons and Dragons.
+# Dungeons & Dragons 5th Edition Character Sheet
+### A New and Modern Character Sheet for 5th edition Dungeons & Dragons.
 #### About:
 The main idea behind this sheet is easy access to common character information and auto calculation & population of fields.
 
