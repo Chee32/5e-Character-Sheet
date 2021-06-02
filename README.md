@@ -1,31 +1,90 @@
-# 5e Character Sheet
- A character sheet for 5th edition dungeons and dragons
+# DnD 5e Modern Character Sheet
+### A New and Modern Character Sheet for 5th edition Dungeons and Dragons.
+#### About:
+The main idea behind this sheet is easy access to common character information and auto calculation & population of fields.
 
-This is meant to be an offline character sheet for the game of dungeons and dragons. It is not written to be mobile-friendly or with any online modules. 
-It does, however, include jQuery and uses it to load a character from a JSON file and automatically fill out most of the sheet based on your attributes. 
+Currently, this is meant to be an offline character sheet for the game of Dungeons and Dragons. It has been rewritten to have a modern responsive layout in w3's lightweight css.
 
-## Here are some things to know when using this sheet.
+The only part that relies on connecting online is the use of FontAwesome, which is only used in the drop down menu. It utilizes jQuery to load a character from a JSON file and automatically fill out most of the sheet based on your attributes. 
 
-### How to use this sheet.
-The main idea behind this sheet is that you can set your attributes and then the skills will auto-populate based on the scores. To make your own character sheet, download the repository, fill out all the fields staring with proficeincy bonus and attribute scores, and save your sheet into the sheet folder.
+A default Character Sheet has been made to show how this form is meant to be used.  This includes a 'saveSheet.json', 'character.jpeg', and 'symbol.jpeg'. 
 
-I also included the ability to lock the sheet. It stops the scripts from running on the sheet if you want to calculate all of your information yourself.
-To turn on the lock, click the bars in the upper right corner and click lock. This has to be set every time you load up the sheet.
+#### Credits:
+This project was forked from: https://github.com/Chee32/5e-Character-Sheet. Credit goes to Chee32 for the JQuery which remains largely unchanged.
 
-To save the sheet, click the bars in the upper right corner and click save. A JSON will be downloaded. Put this JSON (named savedSheet.json) into the sheet folder of the project. Then you can open index.html and your sheet will populate based on the JSON.
+## Things to know when using this sheet.
+### How to:
+#### Make your own character sheet: 
+1. Download or clone the repository.
+2. Fill out all the fields staring with Proficeincy Bonus and Attribute Scores.
+3. Save your sheet (in the menu).
 
-To change the images upload your images into the imgs folder. For the Character Appearance name the file Character.jpeg. For the Alliance Symbol, name the file Symbol.jpeg. If you want to change the name or file type of these images you will have to go into the CSS and change the values.
+#### Save the sheet:
+1. Click the 'hamburger' bars to open the menu.
+2. In the 'Options' drop-down menu, click 'Save'.
+3. A JSON sheet will be download.
+4. Copy the new sheet into the 'sheet' folder of the project.
+5. You can now refresh the page or click the 'Load' button in the 'Options' drop-down menu.
 
-I have set up a default character to show how this form is meant to be used.  This includes a saveSheet.json, Character.jpeg, and Symbol.jpeg. I hope it helps you in making characters and playing your games.
+#### Change Character & Alliance images:
+1. Upload your images into the 'imgs' folder
+2. For the Character Appearance name the file 'character.jpeg'.
+3. For the Alliance Symbol, name the file 'symbol.jpeg'.
+4. Currently, if you want to change the name or file type of these images you will have to go into the 'app.css' and change the values.
+
+#### To 'Lock' the sheet:
+Locking stops the scripts from running on the sheet if you want to calculate all of your information yourself.
+To turn on the lock:
+1. Click the 'hamburger' bars to open the menu.
+2. In the 'Options' drop-down menu, click 'Lock'.
+    - Currently this has to be set every time you load up the sheet.
 
 ### Fields that don't populate.
 Some fields do not auto-populate based off of the attributes. 
-
-Some of the less obvious ones are:
+#### Some of the less obvious ones are:
 - AC: The reason for this is that your armor and class features mainly determine your AC. I felt it was better to just leave it to you to set it.
 - Initiative Bonus: Again, a lot of things can change this other than attributes.
 - Proficiency Bonus: This mainly changes with level so I felt it was easy enough to set.
 - Current Hit Dice: Again, mainly based on level and not attributes.
 - Max Health: This is mainly based off of class and level. It can also be rolled if you chose to so I didn't want this to change if someone added more hit dice.
 
-Sorry for any spelling mistakes.  If you add them as issues I can change them in anther update.
+---
+
+## Changes & Planned Updates.
+### Changes:
+##### Initial Commit -v2.0:
+- HTML and CSS re-worked to use w3's responsive layout.
+- The sheet should now be usuable 95% of the time on any screen size.
+- Re-structered the layout of fields to hopefully provide easier access to most used stats & information.
+- Re-wrote 90% of the CSS to have a more modern design theory.
+- Re-made menu to be easier to use + use as navigation.
+- Broke down major elements to be on seperate 'pages' instead of everything being on one long page.
+- Updated existing Jquery to work with changes.
+- Added additional JS to add features:
+    - New Menu design.
+    - Section cards can be collapsed.
+    - Switching between 'pages' (displaying/hiding \<div>'s).
+- Added an additional 'Class/Level' section to make it easier to multi-class.
+- Basic character information remains on top of the page as a header.
+- Added a 'Notes' page for generic notes.
+
+### Future Updates & Goals:
+- Code clean-up: a lot of the HTML and CSS needs to be cleaned up to remove depreciated references, be more consistent, and be easier to read.
+- Fine tuning and tweaks to UI.
+- Better documentation going forward.
+- Add Help & documentation as a menu item and/or page.
+- Add additional functionality:
+    - Auto calculate more fields.
+    - Better image handling & selection.
+    - Allow user to select a save sheet to load from.
+    - Make usable online.
+    - Hover Tool-Tips for fields.
+
+---
+
+## Issue Reporting & Pull Requests.
+### Issues:
+If you find any issues, feel free to report them and I will try to address them. Please include as much detail as possible on how to re-create the problem, thanks!
+
+### Pull Requests & Forks:
+Feel free to make contributions or fork this project. Please just credit the original author and myself. Thanks!

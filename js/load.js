@@ -9,14 +9,17 @@ $(document).ready(function (argument) {
 		document.title = loadJson.page1.basic_info.char_name;
 
 	//Load Basic Info
-	$('#page-1 #basic-info input[name="char-name"]').val(loadJson.page1.basic_info.char_name);
-	$('#page-1 #basic-info input[name="level"]').val(loadJson.page1.basic_info.level);
-	$('#page-1 #basic-info input[name="race-class"]').val(loadJson.page1.basic_info.race_class);
-	$('#page-1 #basic-info input[name="background"]').val(loadJson.page1.basic_info.background);
-	$('#page-1 #basic-info input[name="player-name"]').val(loadJson.page1.basic_info.player_name);
-	$('#page-1 #basic-info input[name="exp"]').val(loadJson.page1.basic_info.exp);
-	$('#page-1 #basic-info input[name="alignment"]').val(loadJson.page1.basic_info.alignment);
-	$('#page-1 #basic-info input[name="deity"]').val(loadJson.page1.basic_info.deity);
+	$('#character-basic-info #basic-info input[name="char-name"]').val(loadJson.page1.basic_info.char_name);
+	$('#character-basic-info #basic-info input[name="level"]').val(loadJson.page1.basic_info.level);
+	$('#character-basic-info #basic-info input[name="level-two"]').val(loadJson.page1.basic_info.level_two);
+	
+	//Load Character Info
+	$('#character-basic-info #character-info input[name="race-class"]').val(loadJson.page1.character_info.race_class);
+	$('#character-basic-info #character-info input[name="background"]').val(loadJson.page1.character_info.background);
+	$('#character-basic-info #character-info input[name="player-name"]').val(loadJson.page1.character_info.player_name);
+	$('#character-basic-info #character-info input[name="exp"]').val(loadJson.page1.character_info.exp);
+	$('#character-basic-info #character-info input[name="alignment"]').val(loadJson.page1.character_info.alignment);
+	$('#character-basic-info #character-info input[name="deity"]').val(loadJson.page1.character_info.deity);
 
 	//Load Info Bar
 	$('#page-1 #top-bar input[name="proficiency"]').val(loadJson.page1.top_bar.proficiency);
@@ -41,8 +44,11 @@ $(document).ready(function (argument) {
 	$('#page-1 #attributes input[name="cha"]').val(loadJson.page1.attributes.cha);
 	$('#page-1 #attributes input[name="cha-mod"]').val(loadJson.page1.attributes.cha_mod);
 
-	//Load Skills and Saves
+	//Load Skills and Saves	
 	$('#page-1 #saves-skills select[name="spell-att"]').val(loadJson.page1.saves_skills.spell_casting);
+	if (!$('#saves-skills select[name="spell-att"]').val()) {
+		$('#saves-skills select[name="spell-att"]').val('none').change();
+	}
 	
 	$('#page-1 #saves-skills #saves input[name="str-save"]').val(loadJson.page1.saves_skills.saves.str_save.val);
 	$('#page-1 #saves-skills #saves #str-save input[name="prof"]').prop("checked", loadJson.page1.saves_skills.saves.str_save.prof);
@@ -229,20 +235,21 @@ $(document).ready(function (argument) {
 	$('#page-2 #mount-pet textarea[name="mount-notes"]').val(loadJson.page2.mount_pet.notes);
 	
 	//Load Backstory
-	$('#page-2 #backstory textarea[name="backstory"]').val(loadJson.page2.backstory);
+	$('#page-4 #backstory textarea[name="backstory"]').val(loadJson.page4.backstory);
 
 	//Load allies/organizations
-	$('#page-2 #allies-organizations input[name="name"]').val(loadJson.page2.allies_organizations.name);
-	$('#page-2 #allies-organizations textarea[name="allies-organizations"]').val(loadJson.page2.allies_organizations.val);
+	$('#page-4 #allies-organizations input[name="name"]').val(loadJson.page4.allies_organizations.name);
+	$('#page-4 #allies-organizations textarea[name="allies-organizations"]').val(loadJson.page4.allies_organizations.val);
 
 	//Load Personality
-	$('#personality #personality-traits textarea[name="personality-traits"]').val(loadJson.page2.personality.personality_traits);
-	$('#personality #ideals textarea[name="ideals"]').val(loadJson.page2.personality.ideals);
-	$('#personality #bonds textarea[name="bonds"]').val(loadJson.page2.personality.bonds);
-	$('#personality #flaws textarea[name="flaws"]').val(loadJson.page2.personality.flaws);
+	$('#personality #personality-traits textarea[name="personality-traits"]').val(loadJson.page4.personality.personality_traits);
+	$('#personality #ideals textarea[name="ideals"]').val(loadJson.page4.personality.ideals);
+	$('#personality #bonds textarea[name="bonds"]').val(loadJson.page4.personality.bonds);
+	$('#personality #flaws textarea[name="flaws"]').val(loadJson.page4.personality.flaws);
 
 	//Load Notes
-	$('#page-2 #notes textarea[name="notes"]').val(loadJson.page2.notes);
+	$('#page-5 #notes-1 textarea[name="notes-1"]').val(loadJson.page5.notes_1);
+	$('#page-5 #notes-2 textarea[name="notes-2"]').val(loadJson.page5.notes_2);
 
 	//Load Spell Info
 	$('#page-3 #spell-info input[name="class"]').val(loadJson.page3.spell_info.class);

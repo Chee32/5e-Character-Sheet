@@ -3,12 +3,12 @@ var LOCKED = false;
 function lock(argument) {
 	LOCKED = !LOCKED;
 	if(LOCKED)
-		$('#menu #lock').text('Locked');
+		$('#menu-options #lock').text('Locked');
 	else
-		$('#menu #lock').text('Unlocked');
+		$('#menu-options #lock').text('Unlocked');
 
-	$('#menu #menu-buttons #lock').toggleClass('locked');
-	$('#menu #menu-buttons #lock').toggleClass('unlocked');
+	$('#menu-options #lock').toggleClass('locked');
+	$('#menu-options #lock').toggleClass('unlocked');
 }
 
 

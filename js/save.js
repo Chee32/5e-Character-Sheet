@@ -70,14 +70,17 @@ function saveSheet(argument) {
 	var sheet = {
 		page1: {
 			basic_info: {
-				char_name: $('#page-1 #basic-info input[name="char-name"]').val(),
-				level: $('#page-1 #basic-info input[name="level"]').val(),
-				race_class: $('#page-1 #basic-info input[name="race-class"]').val(),
-				background: $('#page-1 #basic-info input[name="background"]').val(),
-				player_name: $('#page-1 #basic-info input[name="player-name"]').val(),
-				exp: $('#page-1 #basic-info input[name="exp"]').val(),
-				alignment: $('#page-1 #basic-info input[name="alignment"]').val(),
-				deity: $('#page-1 #basic-info input[name="deity"]').val()
+				char_name: $('#character-basic-info #basic-info input[name="char-name"]').val(),
+				level: $('#character-basic-info #basic-info input[name="level"]').val(),
+				level_two: $('#character-basic-info #basic-info input[name="level-two"]').val(),
+			},
+			character_info: {
+				race_class: $('#character-basic-info #character-info input[name="race-class"]').val(),
+				background: $('#character-basic-info #character-info input[name="background"]').val(),
+				player_name: $('#character-basic-info #character-info input[name="player-name"]').val(),
+				exp: $('#character-basic-info #character-info input[name="exp"]').val(),
+				alignment: $('#character-basic-info #character-info input[name="alignment"]').val(),
+				deity: $('#character-basic-info #character-info input[name="deity"]').val()
 			},
 			top_bar: {
 				proficiency: $('#page-1 #top-bar input[name="proficiency"]').val(),
@@ -307,11 +310,14 @@ function saveSheet(argument) {
 				ac: $('#page-2 #mount-pet input[name="mount-ac"]').val(),
 				speed: $('#page-2 #mount-pet input[name="mount-speed"]').val(),
 				notes: $('#page-2 #mount-pet textarea[name="mount-notes"]').val()
-			},
-			backstory: $('#page-2 #backstory textarea[name="backstory"]').val(),
+			}
+			
+		},
+		page4: {
+			backstory: $('#page-4 #backstory textarea[name="backstory"]').val(),
 			allies_organizations: {
-				name: $('#page-2 #allies-organizations input[name="name"]').val(),
-				val: $('#page-2 #allies-organizations textarea[name="allies-organizations"]').val()
+				name: $('#page-4 #allies-organizations input[name="name"]').val(),
+				val: $('#page-4 #allies-organizations textarea[name="allies-organizations"]').val()
 			},
 			personality: {
 				personality_traits: $('#personality #personality-traits textarea[name="personality-traits"]').val(),
@@ -319,7 +325,6 @@ function saveSheet(argument) {
 				bonds: $('#personality #bonds textarea[name="bonds"]').val(),
 				flaws: $('#personality #flaws textarea[name="flaws"]').val()
 			},
-			notes: $('#page-2 #notes textarea[name="notes"]').val()
 		},
 		page3: {
 			spell_info: {
@@ -369,6 +374,10 @@ function saveSheet(argument) {
 					spells: getSpells('level-9')
 				}
 			}
+		},
+		page5: {
+			notes_1: $('#page-5 #notes-1 textarea[name="notes-1"]').val(),
+			notes_2: $('#page-5 #notes-2 textarea[name="notes-2"]').val()
 		}
 	}
 	
