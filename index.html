@@ -4,10 +4,11 @@
 <head>
     <title>Default Character</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/app.css">
-
+    <!-- Scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="sheet/savedSheet.json"></script>
     <script type="text/javascript" src="js/extra.js"></script>
@@ -15,11 +16,12 @@
     <script type="text/javascript" src="js/add-attack.js"></script>
     <script type="text/javascript" src="js/save.js"></script>
     <script type="text/javascript" src="js/load.js"></script>
-
     <script type="text/javascript" src="js/app.js"></script>
 </head>
 
 <body class="w3-container w3-flat-clouds">
+    <!-- Sidebar -->
+    <!-- Sidebar -->
     <!-- Sidebar -->
     <!--
 	page-1: Attributes
@@ -46,10 +48,15 @@
         </div>
     </div>
     <!-- Sidebar Button -->
+    <!-- Sidebar Button -->
+    <!-- Sidebar Button -->
     <div class="">
         <button id="menu" class="w3-button w3-xlarge w3-blue-gray w3-display-topleft w3-margin w3-round" onclick="w3_open()">☰</button>
     </div>
     <div onclick="w3_close()">
+        <!-- Header -->
+        <!-- Header -->
+        <!-- Header -->
         <!-- Basic Info -->
         <header id="character-basic-info" class="page-width w3-container w3-content w3-margin-top">
             <div id="basic-info" class="w3-col w3-card w3-round w3-margin-bottom">
@@ -95,8 +102,9 @@
             </div>
         </header>
         <!-- Page 1 -->
+        <!-- Page 1 -->
+        <!-- Page 1 -->
         <div id="page-1" class="page w3-container w3-content w3-margin-top" onclick="w3_close()">
-
             <!-- Top Bar -->
             <div class="w3-col w3-margin-bottom">
                 <button onclick="expandPanel('top-bar')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
@@ -295,7 +303,6 @@
                             <span class="sub-label">Charisma</span>
                         </div>
                     </div>
-
                     <div id="skills" class="w3-col w3-padding w3-left-align l2">
                         <div>
                             <span class="label">Strength</span>
@@ -430,7 +437,6 @@
                             <input type="text" name="deception-skill" maxlength="3" size="3" />
                             <span class="sub-label">Deception</span>
                         </div>
-
                         <div id="intimidation-skill" class="box">
                             <input type="checkbox" name="prof" />
                             <input type="checkbox" name="expr" />
@@ -601,7 +607,7 @@
                 </div>
             </div>
             <!-- Attacks -->
-            <div class="box w3-rest w3-margin-top">
+            <div class="w3-col w3-margin-bottom">
                 <button onclick="expandPanel('attacks-spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
                 <div id="attacks-spells" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
                     <table id="attacks">
@@ -666,6 +672,8 @@
                 </div>
             </div>
         </div>
+        <!-- Page 2 -->
+        <!-- Page 2 -->
         <!-- Page 2 -->
         <div id="page-2" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Equipment -->
@@ -789,37 +797,33 @@
                         <div id="mount-name">
                             <span class="label">Name</span>
                             <input type="text" name="mount-name" />
-
                         </div>
                         <div id="mount-type">
                             <span class="label">Type</span>
                             <input type="text" name="mount-type" />
-
                         </div>
                         <div id="mount-health">
                             <span class="label">Health</span>
                             <input type="text" name="mount-health" />
-
                         </div>
                         <div id="mount-ac">
                             <span class="label">AC</span>
                             <input type="text" name="mount-ac" />
-
                         </div>
                         <div id="mount-speed">
                             <span class="label">Speed</span>
                             <input type="text" name="mount-speed" />
-
                         </div>
                     </div>
                     <div id="mount-notes" class="w3-col m7 l8">
                         <span class="label">Mount/Pet Attacks and Notes</span>
                         <textarea name="mount-notes" rows="10"></textarea>
                     </div>
-
                 </div>
             </div>
         </div>
+        <!-- Page 3 -->
+        <!-- Page 3 -->
         <!-- Page 3 -->
         <div id="page-3" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Spell Info -->
@@ -970,7 +974,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-2" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1044,7 +1047,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-3" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1191,7 +1193,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-5" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1249,7 +1250,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-6" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1364,7 +1364,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-8" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1414,7 +1413,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="level-9" class="w3-col w3-padding w3-border-bottom">
                         <div class="title box">
                             <div>
@@ -1476,6 +1474,8 @@
             </div>
         </div>
         <!-- Page 4 -->
+        <!-- Page 4 -->
+        <!-- Page 4 -->
         <div id="page-4" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Personality -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
@@ -1529,6 +1529,8 @@
             </div>
         </div>
         <!-- Page 5 -->
+        <!-- Page 5 -->
+        <!-- Page 5 -->
         <div id="page-5" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Notes -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
@@ -1543,6 +1545,9 @@
                 </div>
             </div>
         </div>
+        <!-- Footer -->
+        <!-- Footer -->
+        <!-- Footer -->
         <footer class="page-width w3-container w3-content">
             <div class="footer w3-blue-gray w3-round w3-padding">
                 DnD 5<sup>th</sup> Edition Character Sheet || Created by <a href="https://github.com/Chee32" target="_blank">Chee32</a> & <a href="https://github.com/lckynmbrsvn" target="_blank">lckynmbrsvn</a> ||
