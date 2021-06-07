@@ -312,12 +312,12 @@ function saveSheet(argument) {
                 notes: $('#page-2 #mount-pet textarea[name="mount-notes"]').val()
             },
             mount_pet2: {
-                name: $('#page-2 #mount-pet input[name="mount-name2"]').val(),
-                type: $('#page-2 #mount-pet input[name="mount-type2"]').val(),
-                health: $('#page-2 #mount-pet input[name="mount-health2"]').val(),
-                ac: $('#page-2 #mount-pet input[name="mount-ac2"]').val(),
-                speed: $('#page-2 #mount-pet input[name="mount-speed2"]').val(),
-                notes: $('#page-2 #mount-pet textarea[name="mount-notes2"]').val()
+                name2: $('#page-2 #mount-pet input[name="mount-name-2"]').val(),
+                type2: $('#page-2 #mount-pet input[name="mount-type-2"]').val(),
+                health2: $('#page-2 #mount-pet input[name="mount-health-2"]').val(),
+                ac2: $('#page-2 #mount-pet input[name="mount-ac-2"]').val(),
+                speed2: $('#page-2 #mount-pet input[name="mount-speed-2"]').val(),
+                notes2: $('#page-2 #mount-pet textarea[name="mount-notes-2"]').val()
             }
 
         },

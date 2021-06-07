@@ -46,6 +46,10 @@
                 <div id="lock" class="unlocked w3-padding">Unlocked</div>
             </div>
         </div>
+        <div class="info w3-margin-top w3-border-top">
+            <div class="label">Info & Help</div>
+            <div class="w3-margin-top"><span class="auto-filled-border w3-round">Alt Color</span> = Auto-Filled</div>
+        </div>
     </div>
     <!-- Sidebar Button -->
     <!-- Sidebar Button -->
@@ -127,7 +131,7 @@
                     </div>
                     <div class="w3-col w3-padding m4 l2">
                         <div class="input-frame">
-                            <input type="text" name="passive-perception" maxlength="2" size="2" />
+                            <input class="auto-filled-border" type="text" name="passive-perception" maxlength="2" size="2" />
                         </div>
                         <div class="label-frame">
                             <span class="label">Passive Perception</span>
@@ -151,7 +155,7 @@
                     </div>
                     <div class="w3-col w3-padding m4 l2">
                         <div class="input-frame">
-                            <input type="text" name="spell-dc" maxlength="2" size="2" />
+                            <input class="auto-filled-border" type="text" name="spell-dc" maxlength="2" size="2" />
                         </div>
                         <div class="label-frame">
                             <span class="label">Spell Save DC</span>
@@ -174,32 +178,32 @@
                     <div id="str" class="w3-col w3-padding m4 l2">
                         <span class="label">Strength</span>
                         <input type="text" class="att" name="str" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="str-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="str-mod" maxlength="2" size="2" />
                     </div>
                     <div id="dex" class="w3-col w3-padding m4 l2">
                         <span class="label">Dexterity</span>
                         <input type="text" class="att" name="dex" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="dex-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="dex-mod" maxlength="2" size="2" />
                     </div>
                     <div id="con" class="w3-col w3-padding m4 l2">
                         <span class="label">Constitution</span>
                         <input type="text" class="att" name="con" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="con-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="con-mod" maxlength="2" size="2" />
                     </div>
                     <div id="int" class="w3-col w3-padding m4 l2">
                         <span class="label">Intelligence</span>
                         <input type="text" class="att" name="int" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="int-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="int-mod" maxlength="2" size="2" />
                     </div>
                     <div id="wis" class="w3-col w3-padding m4 l2">
                         <span class="label">Wisdom</span>
                         <input type="text" class="att" name="wis" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="wis-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="wis-mod" maxlength="2" size="2" />
                     </div>
                     <div id="cha" class="w3-col w3-padding m4 l2">
                         <span class="label">Charisma</span>
                         <input type="text" class="att" name="cha" maxlength="2" size="2" />
-                        <input type="text" class="att-mod" name="cha-mod" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="cha-mod" maxlength="2" size="2" />
                     </div>
                 </div>
             </div>
@@ -228,7 +232,7 @@
                         <span class="label">Hit Dice</span>
                         <div>
                             <span class="sub-label">Current</span>
-                            <input type="text" name="current-hd" />
+                            <input class="label" type="text" name="current-hd" />
                             <input type="text" name="hit-dice" />
                         </div>
                     </div>
@@ -841,28 +845,28 @@
                         <div class="w3-col w3-padding w3-right-align m5 l4">
                             <div id="mount-name">
                                 <span class="label">Name</span>
-                                <input type="text" name="mount-name2" />
+                                <input type="text" name="mount-name-2" />
                             </div>
                             <div id="mount-type">
                                 <span class="label">Type</span>
-                                <input type="text" name="mount-type2" />
+                                <input type="text" name="mount-type-2" />
                             </div>
                             <div id="mount-health">
                                 <span class="label">Health</span>
-                                <input type="text" name="mount-health2" />
+                                <input type="text" name="mount-health-2" />
                             </div>
                             <div id="mount-ac">
                                 <span class="label">AC</span>
-                                <input type="text" name="mount-ac2" />
+                                <input type="text" name="mount-ac-2" />
                             </div>
                             <div id="mount-speed">
                                 <span class="label">Speed</span>
-                                <input type="text" name="mount-speed2" />
+                                <input type="text" name="mount-speed-2" />
                             </div>
                         </div>
                         <div id="mount-notes" class="w3-col m7 l8">
                             <span class="label">Mount/Pet Attacks and Notes</span>
-                            <textarea name="mount-notes2" rows="10"></textarea>
+                            <textarea name="mount-notes-2" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
@@ -886,7 +890,7 @@
                     </div>
                     <div id="att" class="w3-col w3-padding m3 l3">
                         <div class="input-frame">
-                            <input type="text" name="att" maxlength="3" size="3" />
+                            <input class="auto-filled-border" type="text" name="att" maxlength="3" size="3" />
                         </div>
                         <div class="label-frame">
                             <span class="label">Spell Casting Attribute</span>
@@ -894,7 +898,7 @@
                     </div>
                     <div id="dc" class="w3-col w3-padding m3 l3">
                         <div class="input-frame">
-                            <input type="text" name="dc" maxlength="2" size="2" />
+                            <input class="auto-filled-border" type="text" name="dc" maxlength="2" size="2" />
                         </div>
                         <div class="label-frame">
                             <span class="label">Spell Save DC</span>
@@ -902,7 +906,7 @@
                     </div>
                     <div id="bonus" class="w3-col w3-padding m3 l3">
                         <div class="input-frame">
-                            <input type="text" name="bonus" maxlength="2" size="2" />
+                            <input class="auto-filled-border" type="text" name="bonus" maxlength="2" size="2" />
                         </div>
                         <div class="label-frame">
                             <span class="label">Spell Attack Bonus</span>

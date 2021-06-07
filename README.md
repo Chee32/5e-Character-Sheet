@@ -52,6 +52,10 @@ Some fields do not auto-populate based off of the attributes.
 
 ## Changes & Planned Updates.
 ### Changes:
+##### Hotfixes -v2.1.1:
+- Fixed an issue where data from the .json character sheet were not loading.
+- Input Boxes that are auto filled or adjusted are now highlighted in a different color.
+- Menu now has a 'Help' section (to explain color highlight for example).
 ##### Fixes & Formatting -v2.1:
 - Fixed the 'Attack' section not displaying.
 - Formatted HTML, CSS, JS files to be easier to read and have a consistent spacing & tabbing.

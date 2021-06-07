@@ -24,6 +24,28 @@ textarea {
     margin-bottom: 8px;
 }
 
+.auto-filled-shadow {
+    box-shadow: 0 2px 5px 0 rgb(103 58 183 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%)!important;
+}
+
+.auto-filled-border {
+    border: solid 1px #e91e6380;
+}
+
+.auto-filled-border-bottom {
+    border-bottom: solid 1px #e91e6380;
+}
+
+.info {
+    padding-top: 16px;
+    padding-left: 8px;
+}
+
+.info>div>span {
+    background-color: #FFFFFF;
+    padding: 8px;
+}
+
 .expando {
     width: 100%;
 }
@@ -137,8 +159,12 @@ textarea {
 }
 
 #saves-skills input[type="text"] {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #e91e6380;
+    border-right: 1px solid #e91e6380;
+    border-top: 1px solid #e91e6380;
     text-align: center;
+    margin-top: 4px;
 }
 
 #spell-att select {
@@ -317,6 +343,13 @@ td {
 #currancy>div,
 #encumberance>div {
     text-align: right;
+}
+
+#encumberance input {
+    border-top: solid 1px #e91e6380;
+    border-right: solid 1px #e91e6380;
+    border-left: solid 1px #e91e6380;
+    margin-top: 4px;
 }
 
 
