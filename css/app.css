@@ -54,8 +54,15 @@ textarea {
     font-weight: bold;
 }
 
-#menu {
+#menu,
+#scroll-to-top {
     position: fixed;
+    height: 55px;
+    width: 55px;
+}
+
+#scroll-to-top {
+    bottom: 16px;
 }
 
 [type=checkbox],

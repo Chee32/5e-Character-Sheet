@@ -32,11 +32,11 @@
 -->
     <div class="w3-sidebar w3-bar-block w3-border-right w3-flat-clouds w3-animate-left" style="display:none" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large w3-button w3-hover-blue-gray">Close &times;</button>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-1'); w3_close()">Attributes</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-4'); w3_close()">Backstory</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-2'); w3_close()">Inv. & NPCs</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-3'); w3_close()">Spell Sheet</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-5'); w3_close()">Notes</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="w3_close()">Attributes</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="w3_close()">Backstory</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="w3_close()">Inv. & NPCs</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="w3_close()">Spell Sheet</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="w3_close()">Notes</a>
         <div class="w3-dropdown-hover">
             <button class="w3-button w3-hover-blue-gray">Options <i class="fa fa-caret-down"></i></button>
             <div id="menu-options" class="w3-dropdown-content w3-bar-block w3-animate-right">
@@ -54,8 +54,9 @@
     <!-- Sidebar Button -->
     <!-- Sidebar Button -->
     <!-- Sidebar Button -->
-    <div class="">
+    <div>
         <button id="menu" class="w3-button w3-xlarge w3-blue-gray w3-display-topleft w3-margin w3-round" onclick="w3_open()">☰</button>
+        <button id="scroll-to-top" class="w3-button w3-xlarge w3-blue-gray w3-round">^</button>
     </div>
     <div onclick="w3_close()">
         <!-- Header -->
@@ -111,8 +112,8 @@
         <div id="page-1" class="page w3-container w3-content w3-margin-top" onclick="w3_close()">
             <!-- Top Bar -->
             <div class="w3-col w3-margin-bottom">
-                <button onclick="expandPanel('top-bar')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
-                <div id="top-bar" class="w3-hide w3-col w3-center w3-card w3-round w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
+                <div id="top-bar" class="w3-col w3-center w3-card w3-round w3-animate-opacity">
                     <div class="w3-col w3-padding m4 l2">
                         <div class="input-frame">
                             <input type="text" name="proficiency" maxlength="2" size="2" />
@@ -173,8 +174,8 @@
             </div>
             <!-- Attributes -->
             <div class="w3-col w3-margin-bottom">
-                <button onclick="expandPanel('attributes')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
-                <div id="attributes" class="w3-hide w3-col w3-center w3-card w3-round w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
+                <div id="attributes" class="w3-col w3-center w3-card w3-round w3-animate-opacity">
                     <div id="str" class="w3-col w3-padding m4 l2">
                         <span class="label">Strength</span>
                         <input type="text" class="att" name="str" maxlength="2" size="2" />
@@ -209,8 +210,8 @@
             </div>
             <!-- Status & Life -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('status')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Status</button>
-                <div id="status" class="w3-hide w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Status</button>
+                <div id="status" class="w3-animate-opacity">
                     <div id="hit-points" class="w3-col w3-padding  m8 l4 w3-border-right">
                         <div id="temp-health" class="w3-col w3-padding">
                             <input type="text" name="temp-health" />
@@ -267,8 +268,8 @@
             </div>
             <!-- Saves & Skills -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('saves-skills')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Saving Throws & Skills</button>
-                <div id="saves-skills" class="w3-hide w3-col w3-center w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Saving Throws & Skills</button>
+                <div id="saves-skills" class="w3-col w3-center w3-animate-opacity">
                     <div id="saves" class="w3-col w3-padding w3-left-align l12">
                         <div>
                             <span class="label">Saving Throws</span>
@@ -479,8 +480,8 @@
             <div id="prof-traits-container" class="w3-col m12 l4">
                 <!-- Proficiencies -->
                 <div id="proficiencies" class="w3-col w3-margin-bottom">
-                    <button onclick="expandPanel('prof')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
-                    <div id="prof" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
+                    <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
+                    <div id="prof" class="w3-card w3-padding w3-round w3-animate-opacity">
                         <div id="weapons-armor">
                             <span class="label">Weapons & Armor</span>
                             <textarea name="weapons-armor" rows="3"></textarea>
@@ -497,8 +498,8 @@
                 </div>
                 <!-- Features -->
                 <div id="features-container" class="w3-col w3-card w3-round w3-margin-bottom">
-                    <button onclick="expandPanel('features')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
-                    <div id="features" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                    <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
+                    <div id="features" class="w3-padding w3-animate-opacity">
                         <span class="label">Features and Traits</span>
                         <textarea name="features" rows="11"></textarea>
                     </div>
@@ -506,8 +507,8 @@
             </div>
             <!-- Charges, Ammo, Resources -->
             <div id="charges-ammo" class="w3-col w3-card w3-round w3-margin-bottom m12 l8">
-                <button onclick="expandPanel('charges')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Class Resources, Ammo, & Charges</button>
-                <div id="charges" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Class Resources, Ammo, & Charges</button>
+                <div id="charges" class="w3-padding w3-animate-opacity">
                     <div id="charge-1" class="w3-col w3-padding m8 l8">
                         <input type="text" name="charge-1" />
                         <input type="checkbox" name="1" />
@@ -614,8 +615,8 @@
             </div>
             <!-- Attacks -->
             <div class="w3-col w3-margin-bottom l8">
-                <button onclick="expandPanel('attacks-spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
-                <div id="attacks-spells" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
+                <div id="attacks-spells" class="w3-card w3-padding w3-round w3-animate-opacity">
                     <table id="attacks">
                         <tr>
                             <th>Name</th>
@@ -684,8 +685,8 @@
         <div id="page-2" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Equipment -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('equipment')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Inventory</button>
-                <div id="equipment" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Inventory</button>
+                <div id="equipment" class="w3-padding w3-animate-opacity">
                     <div id="currancy-encumberance" class="col-3 w3-col w3-border l4">
                         <div id="currancy" class="box w3-padding w3-margin w3-border-bottom">
                             <span class="label">Currency</span>
@@ -811,8 +812,8 @@
             </div>
             <!-- Mount & Pet -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('mount-pet')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Mount/Pet</button>
-                <div id="mount-pet" class="w3-hide w3-container w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Mount/Pet</button>
+                <div id="mount-pet" class="w3-container w3-padding w3-animate-opacity">
                     <div class="w3-col w3-padding w3-border-right w3-border-bottom m12 l6">
                         <div class="w3-col w3-padding w3-right-align m5 l4">
                             <div id="mount-name">
@@ -878,8 +879,8 @@
         <div id="page-3" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Spell Info -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('spell-info')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spell Info</button>
-                <div id="spell-info" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spell Info</button>
+                <div id="spell-info" class="w3-padding w3-animate-opacity">
                     <div id="class" class="w3-col w3-padding m6 l3">
                         <div class="input-frame">
                             <input type="text" name="class" />
@@ -916,8 +917,8 @@
             </div>
             <!-- Spells -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spells</button>
-                <div id="spells" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spells</button>
+                <div id="spells" class="w3-padding w3-animate-opacity">
                     <div id="cantrips" class="w3-col w3-padding w3-border-bottom">
                         <div class="w3-col">
                             <div>
@@ -1529,8 +1530,8 @@
         <div id="page-4" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Personality -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('personality')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Personality</button>
-                <div id="personality" class="w3-hide w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Personality</button>
+                <div id="personality" class="w3-animate-opacity">
                     <div id="personality-traits" class="w3-col w3-padding m6 l3">
                         <span class="label">Personality Traits</span>
                         <textarea name="personality-traits" rows="4"></textarea>
@@ -1551,8 +1552,8 @@
             </div>
             <!-- Backstory -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('character-background')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Backstory</button>
-                <div id="character-background" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Backstory</button>
+                <div id="character-background" class="w3-padding w3-animate-opacity">
                     <div id="backstory" class="w3-col w3-padding m6 l6">
                         <span class="label">Character Backstory</span>
                         <textarea name="backstory" rows="30"></textarea>
@@ -1584,8 +1585,8 @@
         <div id="page-5" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Notes -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('notes-page')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Notes</button>
-                <div id="notes-page" class="w3-hide w3-animate-opacity w3-show">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Notes</button>
+                <div id="notes-page" class="w3-animate-opacity">
                     <div id="notes-1" class="w3-col w3-padding m6 l6">
                         <textarea name="notes-1" rows="15"></textarea>
                     </div>

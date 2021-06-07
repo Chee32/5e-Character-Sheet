@@ -52,6 +52,9 @@ Some fields do not auto-populate based off of the attributes.
 
 ## Changes & Planned Updates.
 ### Changes:
+##### Better JQuery & More -v2.x.x
+- Updated JQuery for expanding and collapsing panels
+- Added a 'Scroll To Top' button
 ##### Hotfixes -v2.1.1:
 - Fixed an issue where data from the .json character sheet were not loading.
 - Input Boxes that are auto filled or adjusted are now highlighted in a different color.
