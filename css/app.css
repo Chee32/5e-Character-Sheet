@@ -49,6 +49,10 @@ textarea {
 
 /* Page 1 */
 
+#prof-traits-container {
+    padding-right: 16px;
+}
+
 #basic-info input,
 #character-info input {
     border-bottom: 1px solid gray;
@@ -303,16 +307,24 @@ td {
 }
 
 
+/* Page 2 */
+
+#currancy,
+#encumberance {
+    text-align: left;
+}
+
+#currancy>div,
+#encumberance>div {
+    text-align: right;
+}
+
+
 /* Page 3 */
 
 #equipment input,
 #mount-pet input {
     border-bottom: 1px solid black;
-}
-
-#currancy,
-#encumberance {
-    text-align: right;
 }
 
 #currancy input,

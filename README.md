@@ -52,6 +52,13 @@ Some fields do not auto-populate based off of the attributes.
 
 ## Changes & Planned Updates.
 ### Changes:
+##### Fixes & Formatting -v2.1:
+- Fixed the 'Attack' section not displaying.
+- Formatted HTML, CSS, JS files to be easier to read and have a consistent spacing & tabbing.
+- Tweaked the layout of the 'Attributes' page.
+- Added an additional 'Mount/Pet' section to allow for easier management of multiple pets/mounts.
+- Fixed some spelling errors.
+- Tweaked design of the Inventory & Mount page.
 ##### Initial Commit -v2.0:
 - HTML and CSS re-worked to use w3's responsive layout.
 - The sheet should now be usuable 95% of the time on any screen size.

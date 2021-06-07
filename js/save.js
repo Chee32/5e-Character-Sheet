@@ -302,6 +302,7 @@ function saveSheet(argument) {
                     push: $('#encumberance input[name="push-encumberance"]').val()
                 }
             },
+            attacks_spells: getAttacks(),
             mount_pet: {
                 name: $('#page-2 #mount-pet input[name="mount-name"]').val(),
                 type: $('#page-2 #mount-pet input[name="mount-type"]').val(),
@@ -309,6 +310,14 @@ function saveSheet(argument) {
                 ac: $('#page-2 #mount-pet input[name="mount-ac"]').val(),
                 speed: $('#page-2 #mount-pet input[name="mount-speed"]').val(),
                 notes: $('#page-2 #mount-pet textarea[name="mount-notes"]').val()
+            },
+            mount_pet2: {
+                name: $('#page-2 #mount-pet input[name="mount-name2"]').val(),
+                type: $('#page-2 #mount-pet input[name="mount-type2"]').val(),
+                health: $('#page-2 #mount-pet input[name="mount-health2"]').val(),
+                ac: $('#page-2 #mount-pet input[name="mount-ac2"]').val(),
+                speed: $('#page-2 #mount-pet input[name="mount-speed2"]').val(),
+                notes: $('#page-2 #mount-pet textarea[name="mount-notes2"]').val()
             }
 
         },

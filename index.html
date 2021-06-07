@@ -34,7 +34,7 @@
         <button onclick="w3_close()" class="w3-bar-item w3-large w3-button w3-hover-blue-gray">Close &times;</button>
         <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-1'); w3_close()">Attributes</a>
         <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-4'); w3_close()">Backstory</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-2'); w3_close()">Equipment</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-2'); w3_close()">Inv. & NPCs</a>
         <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-3'); w3_close()">Spell Sheet</a>
         <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-5'); w3_close()">Notes</a>
         <div class="w3-dropdown-hover">
@@ -472,26 +472,36 @@
                     </div>
                 </div>
             </div>
-            <!-- Proficiencies -->
-            <div id="proficiencies" class="w3-col w3-margin-bottom w3-margin-right l4">
-                <button onclick="expandPanel('prof')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
-                <div id="prof" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
-                    <div id="weapons-armor">
-                        <span class="label">Weapons & Armor</span>
-                        <textarea name="weapons-armor" rows="3"></textarea>
+            <div id="prof-traits-container" class="w3-col m12 l4">
+                <!-- Proficiencies -->
+                <div id="proficiencies" class="w3-col w3-margin-bottom">
+                    <button onclick="expandPanel('prof')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
+                    <div id="prof" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
+                        <div id="weapons-armor">
+                            <span class="label">Weapons & Armor</span>
+                            <textarea name="weapons-armor" rows="3"></textarea>
+                        </div>
+                        <div id="tools">
+                            <span class="label">Tools</span>
+                            <textarea name="tools" rows="3"></textarea>
+                        </div>
+                        <div id="languages">
+                            <span class="label">Known Languages</span>
+                            <textarea name="languages" rows="3"></textarea>
+                        </div>
                     </div>
-                    <div id="tools">
-                        <span class="label">Tools</span>
-                        <textarea name="tools" rows="3"></textarea>
-                    </div>
-                    <div id="languages">
-                        <span class="label">Known Languages</span>
-                        <textarea name="languages" rows="3"></textarea>
+                </div>
+                <!-- Features -->
+                <div id="features-container" class="w3-col w3-card w3-round w3-margin-bottom">
+                    <button onclick="expandPanel('features')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
+                    <div id="features" class="w3-hide w3-padding w3-animate-opacity w3-show">
+                        <span class="label">Features and Traits</span>
+                        <textarea name="features" rows="11"></textarea>
                     </div>
                 </div>
             </div>
             <!-- Charges, Ammo, Resources -->
-            <div id="charges-ammo" class="w3-col w3-card w3-round w3-margin-bottom m12 l7">
+            <div id="charges-ammo" class="w3-col w3-card w3-round w3-margin-bottom m12 l8">
                 <button onclick="expandPanel('charges')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Class Resources, Ammo, & Charges</button>
                 <div id="charges" class="w3-hide w3-padding w3-animate-opacity w3-show">
                     <div id="charge-1" class="w3-col w3-padding m8 l8">
@@ -598,16 +608,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Features -->
-            <div id="features-container" class="w3-col w3-card w3-round w3-margin-bottom">
-                <button onclick="expandPanel('features')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
-                <div id="features" class="w3-hide w3-padding w3-animate-opacity w3-show">
-                    <span class="label">Features and Traits</span>
-                    <textarea name="features" rows="11"></textarea>
-                </div>
-            </div>
             <!-- Attacks -->
-            <div class="w3-col w3-margin-bottom">
+            <div class="w3-col w3-margin-bottom l8">
                 <button onclick="expandPanel('attacks-spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
                 <div id="attacks-spells" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
                     <table id="attacks">
@@ -678,33 +680,34 @@
         <div id="page-2" class="page w3-container w3-content w3-margin-top" style="display:none">
             <!-- Equipment -->
             <div class="w3-col w3-margin-bottom w3-card w3-round">
-                <button onclick="expandPanel('equipment')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Equipment</button>
+                <button onclick="expandPanel('equipment')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Inventory</button>
                 <div id="equipment" class="w3-hide w3-padding w3-animate-opacity w3-show">
-                    <div class="col-3 w3-col l4">
-                        <div id="currancy" class="box w3-padding w3-margin">
+                    <div id="currancy-encumberance" class="col-3 w3-col w3-border l4">
+                        <div id="currancy" class="box w3-padding w3-margin w3-border-bottom">
+                            <span class="label">Currency</span>
                             <div id="copper" class="box">
-                                <span class="label">Copper</span>
+                                <span class="sub-label">Copper</span>
                                 <input type="text" name="copper" />
                             </div>
                             <div id="silver" class="box">
-                                <span class="label">Silver</span>
+                                <span class="sub-label">Silver</span>
                                 <input type="text" name="silver" />
                             </div>
                             <div id="gold" class="box">
-                                <span class="label">Gold</span>
+                                <span class="sub-label">Gold</span>
                                 <input type="text" name="gold" />
                             </div>
                             <div id="electrum" class="box">
-                                <span class="label">Electrum</span>
+                                <span class="sub-label">Electrum</span>
                                 <input type="text" name="electrum" />
                             </div>
                             <div id="platinum" class="box">
-                                <span class="label">Platinum</span>
+                                <span class="sub-label">Platinum</span>
                                 <input type="text" name="platinum" />
                             </div>
                             <div id="total" class="box">
                                 <span class="label">Total</span>
-                                <select name="base">
+                                <select class="label" name="base">
 						<option value="c">Copper</option>
 						<option value="s">Silver</option>
 						<option value="g" selected="selected">Gold</option>
@@ -715,20 +718,21 @@
                             </div>
                         </div>
                         <div id="encumberance" class="box w3-padding w3-margin">
+                            <span class="label">Encumberance</span>
                             <div id="base">
-                                <span class="label">Base (STR X 5)</span>
+                                <span class="sub-label">Base (STR X 5)</span>
                                 <input type="text" name="base-encumberance">
                             </div>
                             <div id="encumbered">
-                                <span class="label">Encumbered (STR X 10)</span>
+                                <span class="sub-label">Encumbered (STR X 10)</span>
                                 <input type="text" name="encumbered-encumberance">
                             </div>
                             <div id="h-encumbered">
-                                <span class="label">H. Encumbered (STR X 15)</span>
+                                <span class="sub-label">H. Encumbered (STR X 15)</span>
                                 <input type="text" name="h-encumbered-encumberance">
                             </div>
                             <div id="push">
-                                <span class="label">Push (STR X 30)</span>
+                                <span class="sub-label">Push (STR X 30)</span>
                                 <input type="text" name="push-encumberance">
                             </div>
                         </div>
@@ -740,6 +744,18 @@
                             <tr>
                                 <th>Equipment</th>
                                 <th>Weight</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
                             </tr>
                             <tr>
                                 <td><input type="text" name="name" /></td>
@@ -793,31 +809,61 @@
             <div class="w3-col w3-margin-bottom w3-card w3-round">
                 <button onclick="expandPanel('mount-pet')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Mount/Pet</button>
                 <div id="mount-pet" class="w3-hide w3-container w3-padding w3-animate-opacity w3-show">
-                    <div class="w3-col w3-padding w3-right-align m5 l4">
-                        <div id="mount-name">
-                            <span class="label">Name</span>
-                            <input type="text" name="mount-name" />
+                    <div class="w3-col w3-padding w3-border-right w3-border-bottom m12 l6">
+                        <div class="w3-col w3-padding w3-right-align m5 l4">
+                            <div id="mount-name">
+                                <span class="label">Name</span>
+                                <input type="text" name="mount-name" />
+                            </div>
+                            <div id="mount-type">
+                                <span class="label">Type</span>
+                                <input type="text" name="mount-type" />
+                            </div>
+                            <div id="mount-health">
+                                <span class="label">Health</span>
+                                <input type="text" name="mount-health" />
+                            </div>
+                            <div id="mount-ac">
+                                <span class="label">AC</span>
+                                <input type="text" name="mount-ac" />
+                            </div>
+                            <div id="mount-speed">
+                                <span class="label">Speed</span>
+                                <input type="text" name="mount-speed" />
+                            </div>
                         </div>
-                        <div id="mount-type">
-                            <span class="label">Type</span>
-                            <input type="text" name="mount-type" />
-                        </div>
-                        <div id="mount-health">
-                            <span class="label">Health</span>
-                            <input type="text" name="mount-health" />
-                        </div>
-                        <div id="mount-ac">
-                            <span class="label">AC</span>
-                            <input type="text" name="mount-ac" />
-                        </div>
-                        <div id="mount-speed">
-                            <span class="label">Speed</span>
-                            <input type="text" name="mount-speed" />
+                        <div id="mount-notes" class="w3-col m7 l8">
+                            <span class="label">Mount/Pet Attacks and Notes</span>
+                            <textarea name="mount-notes" rows="10"></textarea>
                         </div>
                     </div>
-                    <div id="mount-notes" class="w3-col m7 l8">
-                        <span class="label">Mount/Pet Attacks and Notes</span>
-                        <textarea name="mount-notes" rows="10"></textarea>
+                    <div class="w3-col w3-padding w3-border-right w3-border-bottom m12 l6">
+                        <div class="w3-col w3-padding w3-right-align m5 l4">
+                            <div id="mount-name">
+                                <span class="label">Name</span>
+                                <input type="text" name="mount-name2" />
+                            </div>
+                            <div id="mount-type">
+                                <span class="label">Type</span>
+                                <input type="text" name="mount-type2" />
+                            </div>
+                            <div id="mount-health">
+                                <span class="label">Health</span>
+                                <input type="text" name="mount-health2" />
+                            </div>
+                            <div id="mount-ac">
+                                <span class="label">AC</span>
+                                <input type="text" name="mount-ac2" />
+                            </div>
+                            <div id="mount-speed">
+                                <span class="label">Speed</span>
+                                <input type="text" name="mount-speed2" />
+                            </div>
+                        </div>
+                        <div id="mount-notes" class="w3-col m7 l8">
+                            <span class="label">Mount/Pet Attacks and Notes</span>
+                            <textarea name="mount-notes2" rows="10"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>

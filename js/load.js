@@ -158,15 +158,13 @@ $(document).ready(function(argument) {
     //Load Attacks
     $.each(loadJson.page1.attacks_spells, function(index, value) {
         $('#page-1 #attacks-spells #attacks tbody').append(`
-			<tr>
-				<td><input type="text" name="name" value="` + value.name + `"/></td>
-				<td><input type="text" name="stat" value="` + value.stat + `"/></td>
-				<td><input type="text" name="toHit" value="` + value.toHit + `"/></td>
-				<td><input type="text" name="damage" value="` + value.damage + `"/></td>
-				<td><input type="text" name="damage_type" value="` + value.damage_type + `"/></td>
-				<td><button>X</button></td>
-			</tr>
-			`);
+            <tr>                    <td><input type="text" name="name" value="` + value.name + `"/></td>
+                <td><input type="text" name="stat" value="` + value.stat + `"/></td>
+                <td><input type="text" name="toHit" value="` + value.toHit + `"/></td>
+                <td><input type="text" name="damage" value="` + value.damage + `"/></td>
+                <td><input type="text" name="damage_type" value="` + value.damage_type + `"/></td>
+                <td><button>X</button></td>                </tr>
+            `);
     });
 
     //Load Charges
@@ -233,6 +231,14 @@ $(document).ready(function(argument) {
     $('#page-2 #mount-pet input[name="mount-ac"]').val(loadJson.page2.mount_pet.ac);
     $('#page-2 #mount-pet input[name="mount-speed"]').val(loadJson.page2.mount_pet.speed);
     $('#page-2 #mount-pet textarea[name="mount-notes"]').val(loadJson.page2.mount_pet.notes);
+
+    //Load Mount 2
+    $('#page-2 #mount-pet input[name="mount-name2"]').val(loadJson.page2.mount_pet2.name);
+    $('#page-2 #mount-pet input[name="mount-type2"]').val(loadJson.page2.mount_pet2.type);
+    $('#page-2 #mount-pet input[name="mount-health2"]').val(loadJson.page2.mount_pet2.health);
+    $('#page-2 #mount-pet input[name="mount-ac2"]').val(loadJson.page2.mount_pet2.ac);
+    $('#page-2 #mount-pet input[name="mount-speed2"]').val(loadJson.page2.mount_pet2.speed);
+    $('#page-2 #mount-pet textarea[name="mount-notes2"]').val(loadJson.page2.mount_pet2.notes);
 
     //Load Backstory
     $('#page-4 #backstory textarea[name="backstory"]').val(loadJson.page4.backstory);
