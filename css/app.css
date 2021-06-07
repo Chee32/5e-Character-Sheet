@@ -1,10 +1,14 @@
 /* Elements */
-input, textarea, select {
-	border: none;
-	outline: none;
+
+input,
+textarea,
+select {
+    border: none;
+    outline: none;
 }
+
 textarea {
-	width: 100%;
+    width: 100%;
     resize: none;
     /*font-family: 'Reenie Beanie', cursive;*/
     color: #000000;
@@ -15,93 +19,142 @@ textarea {
     background-image: -webkit-linear-gradient(top, transparent, transparent 19px, #E7EFF8 0);
     -webkit-background-size: 100% 20px;
     background-size: 100% 20px;
-	box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-	border-radius: 4px;
-	margin-bottom: 8px;
+    box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
-input {
-	/* font-family: 'Reenie Beanie', cursive; */
+
+.auto-filled-shadow {
+    box-shadow: 0 2px 5px 0 rgb(103 58 183 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%)!important;
 }
+
+.auto-filled-border {
+    border: solid 1px #e91e6380;
+}
+
+.auto-filled-border-bottom {
+    border-bottom: solid 1px #e91e6380;
+}
+
+.info {
+    padding-top: 16px;
+    padding-left: 8px;
+}
+
+.info>div>span {
+    background-color: #FFFFFF;
+    padding: 8px;
+}
+
 .expando {
-	width: 100%;
+    width: 100%;
 }
+
 .label {
-	font-weight: bold;
+    font-weight: bold;
 }
-#menu {
-	position: fixed;
+
+#menu,
+#scroll-to-top {
+    position: fixed;
+    height: 55px;
+    width: 55px;
 }
-[type=checkbox], [type=radio] {
+
+#scroll-to-top {
+    bottom: 16px;
+}
+
+[type=checkbox],
+[type=radio] {
     margin-left: 12px;
-	box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
+
 .footer {
-	text-align: center;
+    text-align: center;
 }
+
+
 /* Page 1 */
-/* Basic Info */
-#basic-info input, #character-info input {
-	border-bottom: 1px solid gray;
+
+#prof-traits-container {
+    padding-right: 16px;
 }
+
+#basic-info input,
+#character-info input {
+    border-bottom: 1px solid gray;
+}
+
 #basic-info {
-	margin-bottom: 16px;
+    margin-bottom: 16px;
 }
-.page, .page-width {
-	max-width: 80%;
-	margin: auto;
+
+.page,
+.page-width {
+    max-width: 80%;
+    margin: auto;
 }
-/* Top Bar */
+
 #top-bar .label {
-	font-size: 1.1em;
+    font-size: 1.1em;
 }
+
 #top-bar .input-frame {
     background-size: contain;
     padding: 15px;
     position: relative;
 }
+
 #top-bar input {
     font-size: 24px;
     margin: auto;
     display: block;
     text-align: center;
-	box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
+
 #top-bar .box {
-	min-width: 100px;
-	max-width: 130px;
-	min-height: 150px;
-	margin-right: 16px;
-	margin-bottom: 16px;
-	padding: 5px
+    min-width: 100px;
+    max-width: 130px;
+    min-height: 150px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    padding: 5px
 }
+
 #top-bar .box:last-child {
-	margin-right: 0px;
+    margin-right: 0px;
 }
-/* Attributes */
+
 #attributes .label {
-	font-size: 1.2em;
+    font-size: 1.2em;
 }
+
 #attributes .box {
-	min-height: 150px;
+    min-height: 150px;
     min-width: 130px;
-	max-width: 160px;
+    max-width: 160px;
     margin: auto;
     background-size: cover;
-	margin-right: 16px;
-	margin-bottom: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
 }
+
 #attributes .att {
-	width: 60%;
+    width: 60%;
     height: 46%;
     font-size: 44px;
     margin: auto;
     display: block;
     text-align: center;
-	box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-	border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
 }
+
 #attributes .att-mod {
-	width: 40%;
+    width: 40%;
     font-size: 24px;
     margin: auto;
     display: block;
@@ -111,111 +164,123 @@ input {
     padding: 5px;
     /*box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);*/
 }
-/* Saves & Skills */
+
 #saves-skills input[type="text"] {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #e91e6380;
+    border-right: 1px solid #e91e6380;
+    border-top: 1px solid #e91e6380;
     text-align: center;
+    margin-top: 4px;
 }
+
 #spell-att select {
-	font-size: 1.2em;
+    font-size: 1.2em;
 }
-#saves-skills {
-	
-}
-/* Status */
-#status > div {
-	min-height: 191px;
-	border-right: 1px solid #ccc!important;
+
+#status>div {
+    min-height: 191px;
+    border-right: 1px solid #ccc!important;
     border-top: 1px solid #ccc!important;
 }
-#saves-skills > div {
-	/*min-height: 240px;*/
-	min-width: 290px;
-	border-right: 1px solid #ccc!important;
+
+#saves-skills>div {
+    /*min-height: 240px;*/
+    min-width: 290px;
+    border-right: 1px solid #ccc!important;
     border-top: 1px solid #ccc!important;
 }
+
 #death-saves {
     align-items: center;
     text-align: center;
-	min-width: 140px;
+    min-width: 140px;
 }
-#conditions, #boons, #hit-dice {
-	min-width: 160px;
+
+#conditions,
+#boons,
+#hit-dice {
+    min-width: 160px;
 }
-#hit-dice > div {
-	text-align: center;
+
+#hit-dice>div {
+    text-align: center;
 }
+
 #hit-dice input[name="hit-dice"] {
-	width: 70%;
+    width: 70%;
     height: 66%;
     font-size: 44px;
     margin: auto;
     display: block;
     text-align: center;
-	margin-top: 15%;
-	border-radius: 7px;
+    margin-top: 15%;
+    border-radius: 7px;
     box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
+
 #hit-dice .label {
-	text-align: center;
+    text-align: center;
 }
+
 #hit-dice input[name="current-hd"] {
     border-bottom: 1px solid black;
     width: 96px;
 }
+
 #hit-points {
-	min-width: 296px;
+    min-width: 296px;
 }
-#hit-points > div {
-	text-align: center;
-	padding: 8px;
+
+#hit-points>div {
+    text-align: center;
+    padding: 8px;
 }
+
 #hit-points input[name="temp-health"] {
-	border-radius: 7px;
+    border-radius: 7px;
     box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     width: 80px;
     height: 44px;
-	margin: auto;
-	text-align: center;
-	font-size: 2em;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
 }
-#hit-points #current-health input, #hit-points #max-health input {
+
+#hit-points #current-health input,
+#hit-points #max-health input {
     width: 100px;
     height: 66%;
     font-size: 44px;
     border-radius: 7px;
     box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-	margin: auto;
-	text-align: center;
+    margin: auto;
+    text-align: center;
 }
-/* Proficiencies */
-#weapons-armor textarea, #tools textarea, #languages textarea {
 
-}
-/* Charges & Ammo */
-#charges-ammo {
-	/*max-width: 565px;*/
-}
 #charges input {
-	border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
+
 #charges div {
-	padding-bottom: 8px;
+    padding-bottom: 8px;
 }
-/* Features */
+
 #features-container {
-	min-width: 350px;
+    min-width: 350px;
 }
-/* Attacks */
+
 #attacks-spells table#attacks {
     width: 100%;
     max-width: 100%;
 }
+
 tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
 }
+
 table {
     display: table;
     border-collapse: separate;
@@ -223,64 +288,149 @@ table {
     text-indent: initial;
     border-spacing: 2px;
     border-color: grey;
-	margin-bottom: 8px;
+    margin-bottom: 8px;
 }
+
 tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
 }
+
 #attacks-spells #attacks td {
     max-width: 90px;
     text-align: center;
 }
+
 td {
     display: table-cell;
     vertical-align: inherit;
 }
+
 #attacks-spells #attacks input {
     width: 90%;
     border-bottom: 1px solid black;
     text-align: center;
 }
+
 #attacks-spells #add-attack {
-   
     align-items: center;
 }
+
 #add-attack .title {
     text-align: center;
     margin: 10px 0px;
 }
+
 #add-attack #attack-form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
+
 #add-attack #attack-form input[type="text"] {
     border-bottom: 1px solid black;
     box-sizing: border-box;
 }
+
 #attack-form div {
-	margin-right: 8px;
-	margin-bottom: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
+
+
 /* Page 2 */
 
-/* Page Backstory */
-#character-background input {
-	border-bottom: 1px solid gray;
-	text-align: center;
+#currancy,
+#encumberance {
+    text-align: left;
 }
+
+#currancy>div,
+#encumberance>div {
+    text-align: right;
+}
+
+#encumberance input {
+    border-top: solid 1px #e91e6380;
+    border-right: solid 1px #e91e6380;
+    border-left: solid 1px #e91e6380;
+    margin-top: 4px;
+}
+
+
+/* Page 3 */
+
+#equipment input,
+#mount-pet input {
+    border-bottom: 1px solid black;
+}
+
+#currancy input,
+#encumberance input {
+    width: 25%;
+    margin-left: 7px;
+}
+
+#equipment table {
+    width: 100%;
+}
+
+#equipment input[name="name"] {
+    width: 100%;
+}
+
+#spell-info {
+    text-align: center;
+}
+
+#spell-info .input-frame {
+    background-size: contain;
+    padding: 15px;
+    position: relative;
+}
+
+#spell-info input {
+    font-size: 24px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+#class input {
+    max-width: 95%;
+}
+
+#spells input {
+    border-bottom: 1px solid black;
+    max-width: 95%;
+}
+
+#spells .level {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* Page 4 */
+
+#character-background input {
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
 #apperance #char-img {
     height: 100%;
-	width: 100%;
-	min-height: 300px;
+    width: 100%;
+    min-height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../imgs/character.jpeg);
     background-position: center center;
 }
+
 #allies-organizations #alli-img {
     height: 90px;
     background-size: contain;
@@ -288,95 +438,113 @@ td {
     background-image: url(../imgs/symbol.jpeg);
     background-position: center center;
 }
-/* Page 3 */
-#equipment input, #mount-pet input {
-	border-bottom: 1px solid black;
-}
-#currancy, #encumberance {
-	text-align: right;
-}
-#currancy input, #encumberance input {
-	width: 25%;
-    margin-left: 7px;
-}
-#equipment table {
-	width: 100%;
-}
-#equipment input[name="weight"] {
-	/*max-width: 50px;*/
-}
-#equipment input[name="name"] {
-	width: 100%;
-}
-/* Spells */
-#spell-info {
-	text-align: center;
-}
-#spell-info .input-frame {
-    background-size: contain;
-    padding: 15px;
-    position: relative;
-}
-#spell-info input {
-    font-size: 24px;
-    margin: auto;
-    display: block;
-    text-align: center;
-	box-shadow: 0 2px 5px 0 rgb(116 155 226 / 48%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
-#class input {
-	max-width: 95%;
-}
-#spells input {
-	border-bottom: 1px solid black;
-	max-width: 95%;
-}
-#spells .level {
-	font-weight: bold;
-	font-size: 1.2em;
-}
+
+
 /* w3 custom css */
+
 .w3-card {
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
+
+
 /* w3 flat colors */
-.w3-flat-turquoise
-{color:#fff;background-color:#1abc9c}
-.w3-flat-emerald
-{color:#fff;background-color:#2ecc71}
-.w3-flat-peter-river
-{color:#fff;background-color:#3498db}
-.w3-flat-amethyst
-{color:#fff;background-color:#9b59b6}
-.w3-flat-wet-asphalt
-{color:#fff;background-color:#34495e}
-.w3-flat-green-sea
-{color:#fff;background-color:#16a085}
-.w3-flat-nephritis
-{color:#fff;background-color:#27ae60}
-.w3-flat-belize-hole
-{color:#fff;background-color:#2980b9}
-.w3-flat-wisteria
-{color:#fff;background-color:#8e44ad}
-.w3-flat-midnight-blue
-{color:#fff;background-color:#2c3e50}
-.w3-flat-sun-flower
-{color:#fff;background-color:#f1c40f}
-.w3-flat-carrot
-{color:#fff;background-color:#e67e22}
-.w3-flat-alizarin
-{color:#fff;background-color:#e74c3c}
-.w3-flat-clouds
-{color:#000;background-color:#ecf0f1}
-.w3-flat-concrete
-{color:#fff;background-color:#95a5a6}
-.w3-flat-orange
-{color:#fff;background-color:#f39c12}
-.w3-flat-pumpkin
-{color:#fff;background-color:#d35400}
-.w3-flat-pomegranate
-{color:#fff;background-color:#c0392b}
-.w3-flat-silver
-{color:#000;background-color:#bdc3c7}
-.w3-flat-asbestos
-{color:#fff;background-color:#7f8c8d}
+
+.w3-flat-turquoise {
+    color: #fff;
+    background-color: #1abc9c
+}
+
+.w3-flat-emerald {
+    color: #fff;
+    background-color: #2ecc71
+}
+
+.w3-flat-peter-river {
+    color: #fff;
+    background-color: #3498db
+}
+
+.w3-flat-amethyst {
+    color: #fff;
+    background-color: #9b59b6
+}
+
+.w3-flat-wet-asphalt {
+    color: #fff;
+    background-color: #34495e
+}
+
+.w3-flat-green-sea {
+    color: #fff;
+    background-color: #16a085
+}
+
+.w3-flat-nephritis {
+    color: #fff;
+    background-color: #27ae60
+}
+
+.w3-flat-belize-hole {
+    color: #fff;
+    background-color: #2980b9
+}
+
+.w3-flat-wisteria {
+    color: #fff;
+    background-color: #8e44ad
+}
+
+.w3-flat-midnight-blue {
+    color: #fff;
+    background-color: #2c3e50
+}
+
+.w3-flat-sun-flower {
+    color: #fff;
+    background-color: #f1c40f
+}
+
+.w3-flat-carrot {
+    color: #fff;
+    background-color: #e67e22
+}
+
+.w3-flat-alizarin {
+    color: #fff;
+    background-color: #e74c3c
+}
+
+.w3-flat-clouds {
+    color: #000;
+    background-color: #ecf0f1
+}
+
+.w3-flat-concrete {
+    color: #fff;
+    background-color: #95a5a6
+}
+
+.w3-flat-orange {
+    color: #fff;
+    background-color: #f39c12
+}
+
+.w3-flat-pumpkin {
+    color: #fff;
+    background-color: #d35400
+}
+
+.w3-flat-pomegranate {
+    color: #fff;
+    background-color: #c0392b
+}
+
+.w3-flat-silver {
+    color: #000;
+    background-color: #bdc3c7
+}
+
+.w3-flat-asbestos {
+    color: #fff;
+    background-color: #7f8c8d
+}

@@ -1,458 +1,471 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Default Character</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/app.css">
-	
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="sheet/savedSheet.json"></script>
-	<script type="text/javascript" src="js/extra.js"></script>
-	<script type="text/javascript" src="js/changes.js"></script>
-	<script type="text/javascript" src="js/add-attack.js"></script>
-	<script type="text/javascript" src="js/save.js"></script>
-	<script type="text/javascript" src="js/load.js"></script>
-	
-	<script type="text/javascript" src="js/app.js"></script>
+    <title>Default Character</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="sheet/savedSheet.json"></script>
+    <script type="text/javascript" src="js/extra.js"></script>
+    <script type="text/javascript" src="js/changes.js"></script>
+    <script type="text/javascript" src="js/add-attack.js"></script>
+    <script type="text/javascript" src="js/save.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </head>
+
 <body class="w3-container w3-flat-clouds">
-<!-- Sidebar -->
-<!--
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <!--
 	page-1: Attributes
 	page-2: Equipment
 	page-3: Spell Sheet
 	page-4: Backstory
 	page-5: Notes
 -->
-<div class="w3-sidebar w3-bar-block w3-border-right w3-flat-clouds w3-animate-left" style="display:none" id="mySidebar">
-	<button onclick="w3_close()" class="w3-bar-item w3-large w3-button w3-hover-blue-gray">Close &times;</button>
-	<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-1'); w3_close()">Attributes</a>
-	<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-4'); w3_close()">Backstory</a>
-	<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-2'); w3_close()">Equipment</a>
-	<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-3'); w3_close()">Spell Sheet</a>
-	<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-5'); w3_close()">Notes</a>
-	<div class="w3-dropdown-hover">
-		<button class="w3-button w3-hover-blue-gray">Options <i class="fa fa-caret-down"></i></button>
-		<div id="menu-options" class="w3-dropdown-content w3-bar-block w3-animate-right">
-			<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="loadNewSheet(); w3_close()">Load Save</a>
-			<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="saveSheet(); w3_close()">Save Sheet</a>
-			<a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="lock()">Lock/Unlock Sheet</a>
-			<div id="lock" class="unlocked w3-padding">Unlocked</div>
-		</div>
-	</div>
-</div>
-<!-- Sidebar Button -->
-<div class="">
-	<button id="menu" class="w3-button w3-xlarge w3-blue-gray w3-display-topleft w3-margin w3-round" onclick="w3_open()">☰</button>
-</div>
-<div  onclick="w3_close()">
-<!-- Basic Info -->
-<header id="character-basic-info" class="page-width w3-container w3-content w3-margin-top" style="">
-	<div id="basic-info" class="w3-col w3-card w3-round w3-margin-bottom">
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="char-name"/>
-				<span class="label">Character Name</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="level">
-				<span class="label">Class/Level</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="level-two">
-				<span class="label">Class/Level</span>
-			</div>
-		</div>
-<!-- Character Info -->
-	<div id="character-info" class="w3-col w3-card w3-round">
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="race-class"/>
-				<span class="label">Race</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="background"/>
-				<span class="label">Background</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="player-name"/>
-				<span class="label">Player Name</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="exp"/>
-				<span class="label">Experience</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="alignment"/>
-				<span class="label">Alignment</span>
-			</div>
-			<div class="w3-col w3-padding m6 l4">
-				<input type="text" name="deity">
-				<span class="label">Deity</span>
-			</div>
-	</div>
-</header>
-<!-- Page 1 -->
-<div id="page-1" class="page w3-container w3-content w3-margin-top" style="" onclick="w3_close()">
-
-<!-- Top Bar -->
-	<div class="w3-col w3-margin-bottom">
-	<button onclick="expandPanel('top-bar')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
-	<div id="top-bar" class="w3-hide w3-col w3-center w3-card w3-round w3-animate-opacity w3-show">
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="proficiency" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Proficiency Bonus</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="initiative" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Initiative Bonus</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="passive-perception" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Passive Perception</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="ac" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Armor Class</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="speed" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Speed</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="">
-			<div class="input-frame">
-				<input type="text" name="spell-dc" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Spell Save DC</span>
-			</div>
-		</div>
-		<div class="w3-col w3-padding m4 l2" style="display:none">
-			<div class="input-frame">
-				<input type="text" name="insperation" maxlength="2" size="2" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Insperation</span>
-			</div>
-		</div>
-	</div>
-	</div>
-<!-- Attributes -->
-	<div class="w3-col w3-margin-bottom">
-	<button onclick="expandPanel('attributes')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
-	<div id="attributes" class="w3-hide w3-col w3-center w3-card w3-round w3-animate-opacity w3-show">
-		<div id="str" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Strength</span>
-			<input type="text" class="att" name="str" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="str-mod" maxlength="2" size="2" />
-		</div>
-		<div id="dex" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Dexterity</span>
-			<input type="text" class="att" name="dex" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="dex-mod" maxlength="2" size="2" />
-		</div>
-		<div id="con" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Constitution</span>
-			<input type="text" class="att" name="con" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="con-mod" maxlength="2" size="2" />
-		</div>
-		<div id="int" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Intelligence</span>
-			<input type="text" class="att" name="int" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="int-mod" maxlength="2" size="2" />
-		</div>
-		<div id="wis" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Wisdom</span>
-			<input type="text" class="att" name="wis" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="wis-mod" maxlength="2" size="2" />
-		</div>
-		<div id="cha" class="w3-col w3-padding m4 l2" style="">
-			<span class="label">Charisma</span>
-			<input type="text" class="att" name="cha" maxlength="2" size="2" />
-			<input type="text" class="att-mod" name="cha-mod" maxlength="2" size="2" />
-		</div>
-	</div>
-	</div>
-<!-- Status & Life -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-		<button onclick="expandPanel('status')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Status</button>
-		<div id ="status" class="w3-hide w3-animate-opacity w3-show">
-			<div id="hit-points" class="w3-col w3-padding  m8 l4 w3-border-right">
-					<div id="temp-health" class="w3-col w3-padding">
-						<input type="text" name="temp-health" />
-						<br/>
-						<span class="label w3-padding">Temporary Health</span>
-					</div>
-					<div id="current-health" class="w3-col s6 m6 l6">
-						<input type="text" name="current-health" />
-						<br/>
-						<span class="label">Current Health</span>
-					</div>
-					<div id="max-health" class="w3-col s6 m6 l6">
-						<input type="text" name="max-health" />
-						<br/>
-						<span class="label">Maximum Health</span>
-					</div>
-			</div>
-			<div id="hit-dice" class="w3-col w3-padding m5 l2">
-					<span class="label">Hit Dice</span>
-				<div>
-					<span class="sub-label">Current</span>
-					<input type="text" name="current-hd"/>
-					<input type="text" name="hit-dice"/>
-				</div>
-			</div>
-			<div id="death-saves" class="w3-col w3-padding m5 l2">
-					<span class="label">Death Saves</span>
-					<div id="successes">
-						<span class="sub-label">Success</span>
-						<div id="success-num">
-							<input class="w3-check" type="checkbox" name="success-1" />
-							<input class="w3-check" type="checkbox" name="success-2" />
-							<input class="w3-check" type="checkbox" name="success-3" />
-						</div>
-					</div>
-					<div id="failures" class="">
-						<span class="sub-label">Failure</span>
-						<div id="failure-num">
-							<input class="w3-check" type="checkbox" name="failure-1" />
-							<input class="w3-check" type="checkbox" name="failure-2" />
-							<input class="w3-check" type="checkbox" name="failure-3" />
-						</div>
-					</div>
-			</div>
-			<div id="conditions" class="w3-col w3-padding m4 l2">
-					<span class="label">Conditions</span>
-					<textarea name="conditions" rows="5" ></textarea>
-			</div>
-			<div id="boons" class="w3-col w3-padding m4 l2">
-					<span class="label">Boons</span>
-					<textarea name="boons" rows="5" ></textarea>
-			</div>
-		</div>
-	</div>
-<!-- Saves & Skills -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-		<button onclick="expandPanel('saves-skills')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Saving Throws & Skills</button>
-		<div id="saves-skills" class="w3-hide w3-col w3-center w3-animate-opacity w3-show">
-		<div id="saves" class="w3-col w3-padding w3-left-align l12">
-			<div>
-				<span class="label">Saving Throws</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-			</div>
-			<div id="str-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="str-save" maxlength="2" size="2" />
-				<span class="sub-label">Strength</span>
-			</div>
-			<div id="dex-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="dex-save" maxlength="2" size="2" />
-				<span class="sub-label">Dexterity</span>
-			</div>
-			<div id="con-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="con-save" maxlength="2" size="2" />
-				<span class="sub-label">Constitution</span>
-			</div>
-			<div id="int-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="int-save" maxlength="2" size="2" />
-				<span class="sub-label">Intelligence</span>
-			</div>
-			<div id="wis-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="wis-save" maxlength="2" size="2" />
-				<span class="sub-label">Wisdom</span>
-			</div>
-			<div id="cha-save" class="box w3-col m4 l2">
-				<input type="checkbox" name="prof" />
-				<input type="text" name="cha-save" maxlength="2" size="2" />
-				<span class="sub-label">Charisma</span>
-			</div>
-		</div>
-
-		<div id="skills" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Strength</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-				<span class="sub-label">Expr</span>
-			</div>
-			<div id="athletics-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="athletics-skill" maxlength="3" size="3" />
-				<span class="sub-label">Athletics</span>
-			</div>
-		</div>
-		<div id="skills" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Dexterity</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-				<span class="sub-label">Expr</span>
-			</div>
-			<div id="acrobatics-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="acrobatics-skill" maxlength="3" size="3" />
-				<span class="sub-label">Acrobtics</span>
-			</div>
-			<div id="sleight-hand-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="sleight-hand-skill" maxlength="3" size="3" />
-				<span class="sub-label">Sleight of Hand</span>
-			</div>
-			<div id="stealth-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="stealth-skill" maxlength="3" size="3" />
-				<span class="sub-label">Stealth</span>
-			</div>
-		</div>
-		<div id="skills" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Intelligence</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-				<span class="sub-label">Expr</span>
-			</div>
-			<div id="arcana-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="arcana-skill" maxlength="3" size="3" />
-				<span class="sub-label">Arcana</span>
-			</div>
-			<div id="history-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="history-skill" maxlength="3" size="3" />
-				<span class="sub-label">History</span>
-			</div>
-			<div id="investigation-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="investigation-skill" maxlength="3" size="3" />
-				<span class="sub-label">Investigation</span>
-			</div>
-			<div id="religion-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="religion-skill" maxlength="3" size="3" />
-				<span class="sub-label">Religion</span>
-			</div>
-		</div>
-		<div id="skills" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Wisdom</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-				<span class="sub-label">Expr</span>
-			</div>
-			<div id="animal-handling-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="animal-handling-skill" maxlength="3" size="3" />
-				<span class="sub-label">Animal Handling</span>
-			</div>
-			<div id="insight-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="insight-skill" maxlength="3" size="3" />
-				<span class="sub-label">Insight</span>
-			</div>
-			<div id="medicine-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="medicine-skill" maxlength="3" size="3" />
-				<span class="sub-label">Medicine</span>
-			</div>
-			<div id="nature-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="nature-skill" maxlength="3" size="3" />
-				<span class="sub-label">Nature</span>
-			</div>
-			<div id="perception-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="perception-skill" maxlength="3" size="3" />
-				<span class="sub-label">Perception</span>
-			</div>
-			<div id="survival-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="survival-skill" maxlength="3" size="3" />
-				<span class="sub-label">Survival</span>
-			</div>
-		</div>
-		<div id="skills" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Charisma</span>
-			</div>
-			<div>
-				<span class="sub-label">Prof</span>
-				<span class="sub-label">Expr</span>
-			</div>
-			<div id="deception-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="deception-skill" maxlength="3" size="3" />
-				<span class="sub-label">Deception</span>
-			</div>
-			
-			<div id="intimidation-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="intimidation-skill" maxlength="3" size="3" />
-				<span class="sub-label">Intimidation</span>
-			</div>
-			<div id="performance-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="performance-skill" maxlength="3" size="3" />
-				<span class="sub-label">Performance</span>
-			</div>
-			<div id="persuasion-skill" class="box">
-				<input type="checkbox" name="prof" />
-				<input type="checkbox" name="expr" />
-				<input type="text" name="persuasion-skill" maxlength="3" size="3" />
-				<span class="sub-label">Persuasion</span>
-			</div>
-		</div>
-		<div id="spell-att" class="w3-col w3-padding w3-left-align l2">
-			<div>
-				<span class="label">Spell Save DC</span>
-			</div>
-			<select name="spell-att">
+    <div class="w3-sidebar w3-bar-block w3-border-right w3-flat-clouds w3-animate-left" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large w3-button w3-hover-blue-gray">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-1'); w3_close()">Attributes</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-4'); w3_close()">Backstory</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-2'); w3_close()">Inv. & NPCs</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-3'); w3_close()">Spell Sheet</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="openPage('page-5'); w3_close()">Notes</a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button w3-hover-blue-gray">Options <i class="fa fa-caret-down"></i></button>
+            <div id="menu-options" class="w3-dropdown-content w3-bar-block w3-animate-right">
+                <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="loadNewSheet(); w3_close()">Load Save</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="saveSheet(); w3_close()">Save Sheet</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-blue-gray" onclick="lock()">Lock/Unlock Sheet</a>
+                <div id="lock" class="unlocked w3-padding">Unlocked</div>
+            </div>
+        </div>
+        <div class="info w3-margin-top w3-border-top">
+            <div class="label">Info & Help</div>
+            <div class="w3-margin-top"><span class="auto-filled-border w3-round">Alt Color</span> = Auto-Filled</div>
+        </div>
+    </div>
+    <!-- Sidebar Button -->
+    <!-- Sidebar Button -->
+    <!-- Sidebar Button -->
+    <div>
+        <button id="menu" class="w3-button w3-xlarge w3-blue-gray w3-display-topleft w3-margin w3-round" onclick="w3_open()">☰</button>
+        <button id="scroll-to-top" class="w3-button w3-xlarge w3-blue-gray w3-round">^</button>
+    </div>
+    <div onclick="w3_close()">
+        <!-- Header -->
+        <!-- Header -->
+        <!-- Header -->
+        <!-- Basic Info -->
+        <header id="character-basic-info" class="page-width w3-container w3-content w3-margin-top">
+            <div id="basic-info" class="w3-col w3-card w3-round w3-margin-bottom">
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="char-name" />
+                    <span class="label">Character Name</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="level">
+                    <span class="label">Class/Level</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="level-two">
+                    <span class="label">Class/Level</span>
+                </div>
+            </div>
+            <!-- Character Info -->
+            <div id="character-info" class="w3-col w3-card w3-round">
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="race-class" />
+                    <span class="label">Race</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="background" />
+                    <span class="label">Background</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="player-name" />
+                    <span class="label">Player Name</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="exp" />
+                    <span class="label">Experience</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="alignment" />
+                    <span class="label">Alignment</span>
+                </div>
+                <div class="w3-col w3-padding m6 l4">
+                    <input type="text" name="deity">
+                    <span class="label">Deity</span>
+                </div>
+            </div>
+        </header>
+        <!-- Page 1 -->
+        <!-- Page 1 -->
+        <!-- Page 1 -->
+        <div id="page-1" class="page w3-container w3-content w3-margin-top" onclick="w3_close()">
+            <!-- Top Bar -->
+            <div class="w3-col w3-margin-bottom">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
+                <div id="top-bar" class="w3-col w3-center w3-card w3-round w3-animate-opacity">
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input type="text" name="proficiency" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Proficiency Bonus</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input type="text" name="initiative" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Initiative Bonus</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input class="auto-filled-border" type="text" name="passive-perception" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Passive Perception</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input type="text" name="ac" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Armor Class</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input type="text" name="speed" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Speed</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2">
+                        <div class="input-frame">
+                            <input class="auto-filled-border" type="text" name="spell-dc" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Spell Save DC</span>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding m4 l2" style="display:none">
+                        <div class="input-frame">
+                            <input type="text" name="insperation" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Insperation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Attributes -->
+            <div class="w3-col w3-margin-bottom">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attributes</button>
+                <div id="attributes" class="w3-col w3-center w3-card w3-round w3-animate-opacity">
+                    <div id="str" class="w3-col w3-padding m4 l2">
+                        <span class="label">Strength</span>
+                        <input type="text" class="att" name="str" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="str-mod" maxlength="2" size="2" />
+                    </div>
+                    <div id="dex" class="w3-col w3-padding m4 l2">
+                        <span class="label">Dexterity</span>
+                        <input type="text" class="att" name="dex" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="dex-mod" maxlength="2" size="2" />
+                    </div>
+                    <div id="con" class="w3-col w3-padding m4 l2">
+                        <span class="label">Constitution</span>
+                        <input type="text" class="att" name="con" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="con-mod" maxlength="2" size="2" />
+                    </div>
+                    <div id="int" class="w3-col w3-padding m4 l2">
+                        <span class="label">Intelligence</span>
+                        <input type="text" class="att" name="int" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="int-mod" maxlength="2" size="2" />
+                    </div>
+                    <div id="wis" class="w3-col w3-padding m4 l2">
+                        <span class="label">Wisdom</span>
+                        <input type="text" class="att" name="wis" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="wis-mod" maxlength="2" size="2" />
+                    </div>
+                    <div id="cha" class="w3-col w3-padding m4 l2">
+                        <span class="label">Charisma</span>
+                        <input type="text" class="att" name="cha" maxlength="2" size="2" />
+                        <input type="text" class="att-mod auto-filled-border" name="cha-mod" maxlength="2" size="2" />
+                    </div>
+                </div>
+            </div>
+            <!-- Status & Life -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Status</button>
+                <div id="status" class="w3-animate-opacity">
+                    <div id="hit-points" class="w3-col w3-padding  m8 l4 w3-border-right">
+                        <div id="temp-health" class="w3-col w3-padding">
+                            <input type="text" name="temp-health" />
+                            <br/>
+                            <span class="label w3-padding">Temporary Health</span>
+                        </div>
+                        <div id="current-health" class="w3-col s6 m6 l6">
+                            <input type="text" name="current-health" />
+                            <br/>
+                            <span class="label">Current Health</span>
+                        </div>
+                        <div id="max-health" class="w3-col s6 m6 l6">
+                            <input type="text" name="max-health" />
+                            <br/>
+                            <span class="label">Maximum Health</span>
+                        </div>
+                    </div>
+                    <div id="hit-dice" class="w3-col w3-padding m5 l2">
+                        <span class="label">Hit Dice</span>
+                        <div>
+                            <span class="sub-label">Current</span>
+                            <input class="label" type="text" name="current-hd" />
+                            <input type="text" name="hit-dice" />
+                        </div>
+                    </div>
+                    <div id="death-saves" class="w3-col w3-padding m5 l2">
+                        <span class="label">Death Saves</span>
+                        <div id="successes">
+                            <span class="sub-label">Success</span>
+                            <div id="success-num">
+                                <input class="w3-check" type="checkbox" name="success-1" />
+                                <input class="w3-check" type="checkbox" name="success-2" />
+                                <input class="w3-check" type="checkbox" name="success-3" />
+                            </div>
+                        </div>
+                        <div id="failures" class="">
+                            <span class="sub-label">Failure</span>
+                            <div id="failure-num">
+                                <input class="w3-check" type="checkbox" name="failure-1" />
+                                <input class="w3-check" type="checkbox" name="failure-2" />
+                                <input class="w3-check" type="checkbox" name="failure-3" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="conditions" class="w3-col w3-padding m4 l2">
+                        <span class="label">Conditions</span>
+                        <textarea name="conditions" rows="5"></textarea>
+                    </div>
+                    <div id="boons" class="w3-col w3-padding m4 l2">
+                        <span class="label">Boons</span>
+                        <textarea name="boons" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Saves & Skills -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Saving Throws & Skills</button>
+                <div id="saves-skills" class="w3-col w3-center w3-animate-opacity">
+                    <div id="saves" class="w3-col w3-padding w3-left-align l12">
+                        <div>
+                            <span class="label">Saving Throws</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                        </div>
+                        <div id="str-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="str-save" maxlength="2" size="2" />
+                            <span class="sub-label">Strength</span>
+                        </div>
+                        <div id="dex-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="dex-save" maxlength="2" size="2" />
+                            <span class="sub-label">Dexterity</span>
+                        </div>
+                        <div id="con-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="con-save" maxlength="2" size="2" />
+                            <span class="sub-label">Constitution</span>
+                        </div>
+                        <div id="int-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="int-save" maxlength="2" size="2" />
+                            <span class="sub-label">Intelligence</span>
+                        </div>
+                        <div id="wis-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="wis-save" maxlength="2" size="2" />
+                            <span class="sub-label">Wisdom</span>
+                        </div>
+                        <div id="cha-save" class="box w3-col m4 l2">
+                            <input type="checkbox" name="prof" />
+                            <input type="text" name="cha-save" maxlength="2" size="2" />
+                            <span class="sub-label">Charisma</span>
+                        </div>
+                    </div>
+                    <div id="skills" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Strength</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                            <span class="sub-label">Expr</span>
+                        </div>
+                        <div id="athletics-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="athletics-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Athletics</span>
+                        </div>
+                    </div>
+                    <div id="skills" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Dexterity</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                            <span class="sub-label">Expr</span>
+                        </div>
+                        <div id="acrobatics-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="acrobatics-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Acrobtics</span>
+                        </div>
+                        <div id="sleight-hand-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="sleight-hand-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Sleight of Hand</span>
+                        </div>
+                        <div id="stealth-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="stealth-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Stealth</span>
+                        </div>
+                    </div>
+                    <div id="skills" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Intelligence</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                            <span class="sub-label">Expr</span>
+                        </div>
+                        <div id="arcana-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="arcana-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Arcana</span>
+                        </div>
+                        <div id="history-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="history-skill" maxlength="3" size="3" />
+                            <span class="sub-label">History</span>
+                        </div>
+                        <div id="investigation-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="investigation-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Investigation</span>
+                        </div>
+                        <div id="religion-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="religion-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Religion</span>
+                        </div>
+                    </div>
+                    <div id="skills" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Wisdom</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                            <span class="sub-label">Expr</span>
+                        </div>
+                        <div id="animal-handling-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="animal-handling-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Animal Handling</span>
+                        </div>
+                        <div id="insight-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="insight-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Insight</span>
+                        </div>
+                        <div id="medicine-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="medicine-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Medicine</span>
+                        </div>
+                        <div id="nature-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="nature-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Nature</span>
+                        </div>
+                        <div id="perception-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="perception-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Perception</span>
+                        </div>
+                        <div id="survival-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="survival-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Survival</span>
+                        </div>
+                    </div>
+                    <div id="skills" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Charisma</span>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prof</span>
+                            <span class="sub-label">Expr</span>
+                        </div>
+                        <div id="deception-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="deception-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Deception</span>
+                        </div>
+                        <div id="intimidation-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="intimidation-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Intimidation</span>
+                        </div>
+                        <div id="performance-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="performance-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Performance</span>
+                        </div>
+                        <div id="persuasion-skill" class="box">
+                            <input type="checkbox" name="prof" />
+                            <input type="checkbox" name="expr" />
+                            <input type="text" name="persuasion-skill" maxlength="3" size="3" />
+                            <span class="sub-label">Persuasion</span>
+                        </div>
+                    </div>
+                    <div id="spell-att" class="w3-col w3-padding w3-left-align l2">
+                        <div>
+                            <span class="label">Spell Save DC</span>
+                        </div>
+                        <select name="spell-att">
 				<option value="none">No Spell Casting</option>
 				<option value="str">Strength</option>
 				<option value="dex">Dexterity</option>
@@ -461,165 +474,167 @@
 				<option value="wis">Wisdom</option>
 				<option value="cha">Charisma</option>
 			</select>
-		</div>
-		</div>
-	</div>
-	<!-- Proficiencies -->
-		<div id="proficiencies" class="w3-col w3-margin-bottom w3-margin-right l4">
-			<button onclick="expandPanel('prof')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
-			<div id="prof" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
-			<div id="weapons-armor">
-				<span class="label">Weapons & Armor</span>
-				<textarea name="weapons-armor" rows="3"></textarea>
-			</div>
-			<div id="tools">
-				<span class="label">Tools</span>
-				<textarea name="tools" rows="3"></textarea>
-			</div>
-			<div id="languages">
-				<span class="label">Known Languages</span>
-				<textarea name="languages" rows="3"></textarea>
-			</div>
-			</div>
-		</div>
-<!-- Charges, Ammo, Resources -->
-	<div id="charges-ammo" class="w3-col w3-card w3-round w3-margin-bottom m12 l7">
-	<button onclick="expandPanel('charges')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Class Resources, Ammo, & Charges</button>
-		<div id="charges" class="w3-hide w3-padding w3-animate-opacity w3-show">
-		<div id="charge-1" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-1"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		<div id="charge-2" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-2"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		<div id="charge-3" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-3"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		<div id="charge-4" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-4"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		<div id="charge-5" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-5"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		<div id="charge-6" class="w3-col w3-padding m8 l8">
-			<input type="text" name="charge-6"/>
-			<input type="checkbox" name="1"/>
-			<input type="checkbox" name="2"/>
-			<input type="checkbox" name="3"/>
-			<input type="checkbox" name="4"/>
-			<input type="checkbox" name="5"/>
-			<input type="checkbox" name="6"/>
-			<input type="checkbox" name="7"/>
-			<input type="checkbox" name="8"/>
-			<input type="checkbox" name="9"/>
-			<input type="checkbox" name="10"/>
-		</div>
-		<div class="w3-col m4 l4">
-			<button class="button empty w3-button w3-blue-gray w3-round-large" >Empty</button>
-			<button class="button fill w3-button w3-blue-gray w3-round-large" >Fill</button>
-		</div>
-		</div>
-	</div>
-<!-- Features -->
-	<div id="features-container" class="w3-col w3-card w3-round w3-margin-bottom">
-	<button onclick="expandPanel('features')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
-		<div id="features" class="w3-hide w3-padding w3-animate-opacity w3-show">
-			<span class="label">Features and Traits</span>
-			<textarea name="features" rows="11"></textarea>
-		</div>
-	</div>
-<!-- Attacks -->
-	<div class="box w3-rest w3-margin-top">
-	<button onclick="expandPanel('attacks-spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
-		<div id="attacks-spells" class="w3-hide w3-card w3-padding w3-round w3-animate-opacity w3-show">
-		<table id="attacks">
-			<tr>
-				<th>Name</th>
-				<th>Base Stat</th>
-				<th>Bonus/DC</th>
-				<th>Damage</th>
-				<th>Damage Type</th>
-			</tr>
-		</table>
-		<div id="add-attack">
-			<span class="label title">Add a new attack:</span>
-			<div id="attack-form">
-				<div id="att-name" class="w3-rest w3-padding w3-card">
-					<input type="text" name="name"/>
-					<span class="label">Name of the attack</span>
-				</div>
-				<div id="attack-stack" class="w3-rest w3-padding w3-card">
-					<select name="stat">
+                    </div>
+                </div>
+            </div>
+            <div id="prof-traits-container" class="w3-col m12 l4">
+                <!-- Proficiencies -->
+                <div id="proficiencies" class="w3-col w3-margin-bottom">
+                    <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Proficiencies</button>
+                    <div id="prof" class="w3-card w3-padding w3-round w3-animate-opacity">
+                        <div id="weapons-armor">
+                            <span class="label">Weapons & Armor</span>
+                            <textarea name="weapons-armor" rows="3"></textarea>
+                        </div>
+                        <div id="tools">
+                            <span class="label">Tools</span>
+                            <textarea name="tools" rows="3"></textarea>
+                        </div>
+                        <div id="languages">
+                            <span class="label">Known Languages</span>
+                            <textarea name="languages" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div id="features-container" class="w3-col w3-card w3-round w3-margin-bottom">
+                    <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Features & Traits</button>
+                    <div id="features" class="w3-padding w3-animate-opacity">
+                        <span class="label">Features and Traits</span>
+                        <textarea name="features" rows="11"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Charges, Ammo, Resources -->
+            <div id="charges-ammo" class="w3-col w3-card w3-round w3-margin-bottom m12 l8">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Class Resources, Ammo, & Charges</button>
+                <div id="charges" class="w3-padding w3-animate-opacity">
+                    <div id="charge-1" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-1" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                    <div id="charge-2" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-2" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                    <div id="charge-3" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-3" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                    <div id="charge-4" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-4" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                    <div id="charge-5" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-5" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                    <div id="charge-6" class="w3-col w3-padding m8 l8">
+                        <input type="text" name="charge-6" />
+                        <input type="checkbox" name="1" />
+                        <input type="checkbox" name="2" />
+                        <input type="checkbox" name="3" />
+                        <input type="checkbox" name="4" />
+                        <input type="checkbox" name="5" />
+                        <input type="checkbox" name="6" />
+                        <input type="checkbox" name="7" />
+                        <input type="checkbox" name="8" />
+                        <input type="checkbox" name="9" />
+                        <input type="checkbox" name="10" />
+                    </div>
+                    <div class="w3-col m4 l4">
+                        <button class="button empty w3-button w3-blue-gray w3-round-large">Empty</button>
+                        <button class="button fill w3-button w3-blue-gray w3-round-large">Fill</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Attacks -->
+            <div class="w3-col w3-margin-bottom l8">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Attacks</button>
+                <div id="attacks-spells" class="w3-card w3-padding w3-round w3-animate-opacity">
+                    <table id="attacks">
+                        <tr>
+                            <th>Name</th>
+                            <th>Base Stat</th>
+                            <th>Bonus/DC</th>
+                            <th>Damage</th>
+                            <th>Damage Type</th>
+                        </tr>
+                    </table>
+                    <div id="add-attack">
+                        <span class="label title">Add a new attack:</span>
+                        <div id="attack-form">
+                            <div id="att-name" class="w3-rest w3-padding w3-card">
+                                <input type="text" name="name" />
+                                <span class="label">Name of the attack</span>
+                            </div>
+                            <div id="attack-stack" class="w3-rest w3-padding w3-card">
+                                <select name="stat">
 						<option value="str">Strength</option>
 						<option value="dex">Dexterity</option>
 						<option value="con">Constitution</option>
@@ -627,927 +642,970 @@
 						<option value="wis">Wisdom</option>
 						<option value="cha">Charisma</option>
 					</select>
-					<span class="label">Choose the base Stat</span>
-				</div>
-				<div id="attack-type" class="w3-rest w3-padding w3-card">
-					<select name="type">
+                                <span class="label">Choose the base Stat</span>
+                            </div>
+                            <div id="attack-type" class="w3-rest w3-padding w3-card">
+                                <select name="type">
 						<option value="toHit">Roll to hit</option>
 						<option value="save">Save DC</option>
 					</select>
-					<span class="label">Choose the type of attack</span>
-				</div>
-				<div id="attack-prof" class="w3-rest w3-padding w3-card">
-					<input type="checkbox" name="proficiency">
-					<span class="sub-label">Add Proficency</span>
-				</div>
-				<div id="attack-dc" class="w3-rest w3-padding w3-card" style="display: none;">
-					<input type="text" name="dc"/>
-					<input type="checkbox" name="spell-dc"/>
-					<span class="sub-label">Use Spell DC?</span>
-					<span class="label">Set DC</span>
-				</div>
-				<div id="attack-dice" class="w3-rest w3-padding w3-card">
-					<input type="text" name="dice"/>
-					<span class="label">Enter Dice</span>
-				</div>
-				<div id="attack-bonus" class="w3-rest w3-padding w3-card">
-					<input type="text" name="bonus"/>
-					<span class="label">Bonus</span>
-				</div>
-				<div id="attack-dmg-type" class="w3-rest w3-padding w3-card" >
-					<input type="text" name="dmg-type">
-					<span class="label">Damage Type</span>
-				</div>
-				<button class="button w3-button w3-blue-gray w3-round-large" onclick="att_attack()">Add Attack</button>
-			</div>
-		</div>
-		</div>
-	</div>
-</div>
-<!-- Page 2 -->
-<div id="page-2" class="page w3-container w3-content w3-margin-top" style="display:none">
-<!-- Equipment -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('equipment')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Equipment</button>
-	<div id="equipment" class="w3-hide w3-padding w3-animate-opacity w3-show">
-		<div class="col-3 w3-col l4">
-			<div id="currancy" class="box w3-padding w3-margin">
-				<div id="copper" class="box">
-					<span class="label">Copper</span>
-					<input type="text" name="copper"/>
-				</div>
-				<div id="silver" class="box">
-					<span class="label">Silver</span>
-					<input type="text" name="silver"/>
-				</div>
-				<div id="gold" class="box">
-					<span class="label">Gold</span>
-					<input type="text" name="gold"/>
-				</div>
-				<div id="electrum" class="box">
-					<span class="label">Electrum</span>
-					<input type="text" name="electrum"/>
-				</div>
-				<div id="platinum" class="box">
-					<span class="label">Platinum</span>
-					<input type="text" name="platinum"/>
-				</div>
-				<div id="total" class="box">
-					<span class="label">Total</span>
-					<select name="base">
+                                <span class="label">Choose the type of attack</span>
+                            </div>
+                            <div id="attack-prof" class="w3-rest w3-padding w3-card">
+                                <input type="checkbox" name="proficiency">
+                                <span class="sub-label">Add Proficency</span>
+                            </div>
+                            <div id="attack-dc" class="w3-rest w3-padding w3-card" style="display: none;">
+                                <input type="text" name="dc" />
+                                <input type="checkbox" name="spell-dc" />
+                                <span class="sub-label">Use Spell DC?</span>
+                                <span class="label">Set DC</span>
+                            </div>
+                            <div id="attack-dice" class="w3-rest w3-padding w3-card">
+                                <input type="text" name="dice" />
+                                <span class="label">Enter Dice</span>
+                            </div>
+                            <div id="attack-bonus" class="w3-rest w3-padding w3-card">
+                                <input type="text" name="bonus" />
+                                <span class="label">Bonus</span>
+                            </div>
+                            <div id="attack-dmg-type" class="w3-rest w3-padding w3-card">
+                                <input type="text" name="dmg-type">
+                                <span class="label">Damage Type</span>
+                            </div>
+                            <button class="button w3-button w3-blue-gray w3-round-large" onclick="att_attack()">Add Attack</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page 2 -->
+        <!-- Page 2 -->
+        <!-- Page 2 -->
+        <div id="page-2" class="page w3-container w3-content w3-margin-top" style="display:none">
+            <!-- Equipment -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Inventory</button>
+                <div id="equipment" class="w3-padding w3-animate-opacity">
+                    <div id="currancy-encumberance" class="col-3 w3-col w3-border l4">
+                        <div id="currancy" class="box w3-padding w3-margin w3-border-bottom">
+                            <span class="label">Currency</span>
+                            <div id="copper" class="box">
+                                <span class="sub-label">Copper</span>
+                                <input type="text" name="copper" />
+                            </div>
+                            <div id="silver" class="box">
+                                <span class="sub-label">Silver</span>
+                                <input type="text" name="silver" />
+                            </div>
+                            <div id="gold" class="box">
+                                <span class="sub-label">Gold</span>
+                                <input type="text" name="gold" />
+                            </div>
+                            <div id="electrum" class="box">
+                                <span class="sub-label">Electrum</span>
+                                <input type="text" name="electrum" />
+                            </div>
+                            <div id="platinum" class="box">
+                                <span class="sub-label">Platinum</span>
+                                <input type="text" name="platinum" />
+                            </div>
+                            <div id="total" class="box">
+                                <span class="label">Total</span>
+                                <select class="label" name="base">
 						<option value="c">Copper</option>
 						<option value="s">Silver</option>
 						<option value="g" selected="selected">Gold</option>
 						<option value="e">Electrum</option>
 						<option value="p">Platinum</option>
 					</select>
-					<input type="text" name="total"/>
-				</div>
-			</div>
-			<div id="encumberance" class="box w3-padding w3-margin">
-				<div id="base">					
-					<span class="label">Base (STR X 5)</span>
-					<input type="text" name="base-encumberance">
-				</div>
-				<div id="encumbered">
-					<span class="label">Encumbered (STR X 10)</span>
-					<input type="text" name="encumbered-encumberance">
-				</div>
-				<div id="h-encumbered">
-					<span class="label">H. Encumbered (STR X 15)</span>
-					<input type="text" name="h-encumbered-encumberance">
-				</div>
-				<div id="push">
-					<span class="label">Push (STR X 30)</span>
-					<input type="text" name="push-encumberance">
-				</div>
-			</div>
-		</div>
-		<div class="col-1 w3-col w3-padding l8">
-			<table>
-				<col style="width:89.99%">
-				<col style="width:9.99%">
-				<tr>
-					<th>Equipment</th>
-					<th>Weight</th>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="name"/></td>
-					<td><input type="text" name="weight"></td>
-				</tr>
-				<tr id="total">
-					<th>Total Weight</th>
-					<td><input type="text" name="total-weight"></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	</div>
-<!-- Mount & Pet -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('mount-pet')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Mount/Pet</button>
-	<div id="mount-pet" class="w3-hide w3-container w3-padding w3-animate-opacity w3-show">
-		<div class="w3-col w3-padding w3-right-align m5 l4">
-		<div id="mount-name">
-			<span class="label">Name</span>
-			<input type="text" name="mount-name"/>
-			
-		</div>
-		<div id="mount-type">
-			<span class="label">Type</span>
-			<input type="text" name="mount-type"/>
-			
-		</div>
-		<div id="mount-health">
-			<span class="label">Health</span>
-			<input type="text" name="mount-health"/>
-			
-		</div>
-		<div id="mount-ac">
-			<span class="label">AC</span>
-			<input type="text" name="mount-ac"/>
-			
-		</div>
-		<div id="mount-speed">
-			<span class="label">Speed</span>
-			<input type="text" name="mount-speed"/>
-			
-		</div>
-		</div>
-		<div id="mount-notes" class="w3-col m7 l8">
-			<span class="label">Mount/Pet Attacks and Notes</span>
-			<textarea name="mount-notes" rows="10"></textarea>
-		</div>
-		
-	</div>
-	</div>
-</div>
-<!-- Page 3 -->
-<div id="page-3" class="page w3-container w3-content w3-margin-top" style="display:none">
-<!-- Spell Info -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('spell-info')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spell Info</button>
-	<div id="spell-info" class="w3-hide w3-padding w3-animate-opacity w3-show">
-		<div id="class" class="w3-col w3-padding m6 l3">
-			<div class="input-frame">
-				<input type="text" name="class" />
-			</div>
-			<div class="label-frame">
-				<span class="label">Spellcasting Class</span>
-			</div>
-		</div>
-		<div id="att" class="w3-col w3-padding m3 l3">
-			<div class="input-frame">
-				<input type="text" name="att" maxlength="3" size="3"/>
-			</div>
-			<div class="label-frame">
-				<span class="label">Spell Casting Attribute</span>
-			</div>
-		</div>
-		<div id="dc" class="w3-col w3-padding m3 l3">
-			<div class="input-frame">
-				<input type="text" name="dc" maxlength="2" size="2"/>
-			</div>
-			<div class="label-frame">
-				<span class="label">Spell Save DC</span>
-			</div>
-		</div>
-		<div id="bonus" class="w3-col w3-padding m3 l3">
-			<div class="input-frame">
-				<input type="text" name="bonus" maxlength="2" size="2"/>
-			</div>
-			<div class="label-frame">
-				<span class="label">Spell Attack Bonus</span>
-			</div>
-		</div>
-	</div>
-	</div>
-<!-- Spells -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('spells')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spells</button>
-	<div id="spells" class="w3-hide w3-padding w3-animate-opacity w3-show">
-			<div id="cantrips" class="w3-col w3-padding w3-border-bottom">
-				<div class="w3-col">
-					<div>
-						<span class="level">Cantrips</span>
-					</div>
-				</div>
-				<div class="spells w3-col w3-margin-bottom">
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>
-			</div>
-			<div id="level-1" class="w3-col w3-padding w3-border-bottom">
-				<div class="w3-col">
-					<div>
-						<span class="level">1<sup>st</sup> Level</span>
-					</div>
-					<div id="total-slots" class="w3-col">
-						<input type="text" name="total-1" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<div class="sub-label">Slots Remaining</div>
-						<div id="slots" class="w3-col">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells w3-col">	
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>			
-			</div>
-			
-			<div id="level-2" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">2<sup>nd</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-2" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>			
-			</div>
-		
-			<div id="level-3" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">3<sup>rd</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-3" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>			
-			</div>
-			<div id="level-4" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">4<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-4" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">	
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>				
-			</div>
-			
-			<div id="level-5" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">5<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-5" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">	
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>			
-			</div>
-		
-			<div id="level-6" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">6<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-6" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">	
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>				
-			</div>
-			<div id="level-7" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">7<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-7" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">		
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>			
-			</div>
-			
-			<div id="level-8" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">8<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-8" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">	
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>
-			</div>
-			
-			<div id="level-9" class="w3-col w3-padding w3-border-bottom">
-				<div class="title box">
-					<div>
-						<span class="level">9<sup>th</sup> Level</span>
-					</div>
-					<div id="total-slots">
-						<input type="text" name="total-9" maxlength="2" size="2" />
-						<span class="sub-label">Slots Total</span>
-					</div>
-					<div>
-						<span class="sub-label">Slots Remaining</span>
-						<div id="slots">
-						</div>
-					</div>
-				</div>
-				<div>
-					<span class="sub-label">Prepared</span>
-				</div>
-				<div class="spells box">		
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-					<div class="spell w3-col m6 l3">
-						<input type="checkbox" name="preped"/>
-						<input type="text" name="spell-name"/>
-					</div>
-				</div>
-			</div>
-	</div>
-	</div>
-</div>
-<!-- Page 4 -->
-<div id="page-4" class="page w3-container w3-content w3-margin-top" style="display:none">
-<!-- Personality -->
-<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('personality')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Personality</button>
-	<div id="personality" class="w3-hide w3-animate-opacity w3-show">
-		<div id="personality-traits" class="w3-col w3-padding m6 l3">
-			<span class="label">Personality Traits</span>
-			<textarea name="personality-traits" rows="4"></textarea>
-		</div>
-		<div id="ideals" class="w3-col w3-padding m6 l3">
-			<span class="label">Ideals</span>
-			<textarea name="ideals" rows="4"></textarea>
-		</div>
-		<div id="bonds" class="w3-col w3-padding m6 l3">
-			<span class="label">Bonds</span>
-			<textarea name="bonds" rows="4"></textarea>
-		</div>
-		<div id="flaws" class="w3-col w3-padding m6 l3">
-			<span class="label">Flaws</span>
-			<textarea name="flaws" rows="4"></textarea>
-		</div>
-	</div>
-</div>
-<!-- Backstory -->
-<div class="w3-col w3-margin-bottom w3-card w3-round">
-	<button onclick="expandPanel('character-background')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Backstory</button>
-	<div id="character-background" class="w3-hide w3-padding w3-animate-opacity w3-show">
-	<div id="backstory" class="w3-col w3-padding m6 l6">
-		<span class="label">Character Backstory</span>
-		<textarea name="backstory" rows="30"></textarea>
-	</div>
-	<div id="apperance" class="w3-col w3-padding m6 l6">
-		<span class="label">Character Apperance</span>
-		<div id="char-img" class="w3-card w3-round"></div>
-	</div>
-	<div id="allies-organizations" class="w3-col w3-padding w3-center w3-round w3-border m6 l6">
-		<div id="name" class="w3-col w3-padding l6">
-			<input type="text" name="name"/>
-			<span class="label">Organization or Guild</span>
-		</div>
-		<div id="symbol" class="w3-col w3-padding l6">
-			<span class="label">Symbol</span>
-			<div id="alli-img" class="w3-round"></div>
-		</div>
-		<div class="w3-col">
-			<span class="label">Allies and Organizations</span>
-			<textarea name="allies-organizations" rows="4"></textarea>
-		</div>
-	</div>
-	</div>
-</div>
-</div>
-<!-- Page 5 -->
-<div id="page-5" class="page w3-container w3-content w3-margin-top" style="display:none">
-<!-- Notes -->
-	<div class="w3-col w3-margin-bottom w3-card w3-round">
-		<button onclick="expandPanel('notes-page')" class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Notes</button>
-		<div id="notes-page" class="w3-hide w3-animate-opacity w3-show">
-		<div id="notes-1" class="w3-col w3-padding m6 l6">
-			<textarea name="notes-1" rows="15"></textarea>
-		</div>
-		<div id="notes-2" class="w3-col w3-padding m6 l6">
-			<textarea name="notes-2" rows="15"></textarea>
-		</div>
-		</div>
-	</div>
-</div>
-<footer class="page-width w3-container w3-content" style="">
-	<div class="footer w3-blue-gray w3-round w3-padding">
-		DnD 5<sup>th</sup> Edition Character Sheet || 
-		Created by <a href="https://github.com/Chee32" target="_blank">Chee32</a> & <a href="https://github.com/lckynmbrsvn" target="_blank">lckynmbrsvn</a> || 
-		<a href="https://github.com/lckynmbrsvn/5e-Character-Sheet" target="_blank">GitHub Project</a>
-	</div>
-</footer>
-</div>
+                                <input type="text" name="total" />
+                            </div>
+                        </div>
+                        <div id="encumberance" class="box w3-padding w3-margin">
+                            <span class="label">Encumberance</span>
+                            <div id="base">
+                                <span class="sub-label">Base (STR X 5)</span>
+                                <input type="text" name="base-encumberance">
+                            </div>
+                            <div id="encumbered">
+                                <span class="sub-label">Encumbered (STR X 10)</span>
+                                <input type="text" name="encumbered-encumberance">
+                            </div>
+                            <div id="h-encumbered">
+                                <span class="sub-label">H. Encumbered (STR X 15)</span>
+                                <input type="text" name="h-encumbered-encumberance">
+                            </div>
+                            <div id="push">
+                                <span class="sub-label">Push (STR X 30)</span>
+                                <input type="text" name="push-encumberance">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1 w3-col w3-padding l8">
+                        <table>
+                            <col style="width:89.99%">
+                            <col style="width:9.99%">
+                            <tr>
+                                <th>Equipment</th>
+                                <th>Weight</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="name" /></td>
+                                <td><input type="text" name="weight"></td>
+                            </tr>
+                            <tr id="total">
+                                <th>Total Weight</th>
+                                <td><input type="text" name="total-weight"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Mount & Pet -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Mount/Pet</button>
+                <div id="mount-pet" class="w3-container w3-padding w3-animate-opacity">
+                    <div class="w3-col w3-padding w3-border-right w3-border-bottom m12 l6">
+                        <div class="w3-col w3-padding w3-right-align m5 l4">
+                            <div id="mount-name">
+                                <span class="label">Name</span>
+                                <input type="text" name="mount-name" />
+                            </div>
+                            <div id="mount-type">
+                                <span class="label">Type</span>
+                                <input type="text" name="mount-type" />
+                            </div>
+                            <div id="mount-health">
+                                <span class="label">Health</span>
+                                <input type="text" name="mount-health" />
+                            </div>
+                            <div id="mount-ac">
+                                <span class="label">AC</span>
+                                <input type="text" name="mount-ac" />
+                            </div>
+                            <div id="mount-speed">
+                                <span class="label">Speed</span>
+                                <input type="text" name="mount-speed" />
+                            </div>
+                        </div>
+                        <div id="mount-notes" class="w3-col m7 l8">
+                            <span class="label">Mount/Pet Attacks and Notes</span>
+                            <textarea name="mount-notes" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="w3-col w3-padding w3-border-right w3-border-bottom m12 l6">
+                        <div class="w3-col w3-padding w3-right-align m5 l4">
+                            <div id="mount-name">
+                                <span class="label">Name</span>
+                                <input type="text" name="mount-name-2" />
+                            </div>
+                            <div id="mount-type">
+                                <span class="label">Type</span>
+                                <input type="text" name="mount-type-2" />
+                            </div>
+                            <div id="mount-health">
+                                <span class="label">Health</span>
+                                <input type="text" name="mount-health-2" />
+                            </div>
+                            <div id="mount-ac">
+                                <span class="label">AC</span>
+                                <input type="text" name="mount-ac-2" />
+                            </div>
+                            <div id="mount-speed">
+                                <span class="label">Speed</span>
+                                <input type="text" name="mount-speed-2" />
+                            </div>
+                        </div>
+                        <div id="mount-notes" class="w3-col m7 l8">
+                            <span class="label">Mount/Pet Attacks and Notes</span>
+                            <textarea name="mount-notes-2" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page 3 -->
+        <!-- Page 3 -->
+        <!-- Page 3 -->
+        <div id="page-3" class="page w3-container w3-content w3-margin-top" style="display:none">
+            <!-- Spell Info -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spell Info</button>
+                <div id="spell-info" class="w3-padding w3-animate-opacity">
+                    <div id="class" class="w3-col w3-padding m6 l3">
+                        <div class="input-frame">
+                            <input type="text" name="class" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Spellcasting Class</span>
+                        </div>
+                    </div>
+                    <div id="att" class="w3-col w3-padding m3 l3">
+                        <div class="input-frame">
+                            <input class="auto-filled-border" type="text" name="att" maxlength="3" size="3" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Spell Casting Attribute</span>
+                        </div>
+                    </div>
+                    <div id="dc" class="w3-col w3-padding m3 l3">
+                        <div class="input-frame">
+                            <input class="auto-filled-border" type="text" name="dc" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Spell Save DC</span>
+                        </div>
+                    </div>
+                    <div id="bonus" class="w3-col w3-padding m3 l3">
+                        <div class="input-frame">
+                            <input class="auto-filled-border" type="text" name="bonus" maxlength="2" size="2" />
+                        </div>
+                        <div class="label-frame">
+                            <span class="label">Spell Attack Bonus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Spells -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Spells</button>
+                <div id="spells" class="w3-padding w3-animate-opacity">
+                    <div id="cantrips" class="w3-col w3-padding w3-border-bottom">
+                        <div class="w3-col">
+                            <div>
+                                <span class="level">Cantrips</span>
+                            </div>
+                        </div>
+                        <div class="spells w3-col w3-margin-bottom">
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-1" class="w3-col w3-padding w3-border-bottom">
+                        <div class="w3-col">
+                            <div>
+                                <span class="level">1<sup>st</sup> Level</span>
+                            </div>
+                            <div id="total-slots" class="w3-col">
+                                <input type="text" name="total-1" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <div class="sub-label">Slots Remaining</div>
+                                <div id="slots" class="w3-col">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells w3-col">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-2" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">2<sup>nd</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-2" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-3" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">3<sup>rd</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-3" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-4" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">4<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-4" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-5" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">5<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-5" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-6" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">6<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-6" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-7" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">7<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-7" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-8" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">8<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-8" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="level-9" class="w3-col w3-padding w3-border-bottom">
+                        <div class="title box">
+                            <div>
+                                <span class="level">9<sup>th</sup> Level</span>
+                            </div>
+                            <div id="total-slots">
+                                <input type="text" name="total-9" maxlength="2" size="2" />
+                                <span class="sub-label">Slots Total</span>
+                            </div>
+                            <div>
+                                <span class="sub-label">Slots Remaining</span>
+                                <div id="slots">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="sub-label">Prepared</span>
+                        </div>
+                        <div class="spells box">
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                            <div class="spell w3-col m6 l3">
+                                <input type="checkbox" name="preped" />
+                                <input type="text" name="spell-name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page 4 -->
+        <!-- Page 4 -->
+        <!-- Page 4 -->
+        <div id="page-4" class="page w3-container w3-content w3-margin-top" style="display:none">
+            <!-- Personality -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Personality</button>
+                <div id="personality" class="w3-animate-opacity">
+                    <div id="personality-traits" class="w3-col w3-padding m6 l3">
+                        <span class="label">Personality Traits</span>
+                        <textarea name="personality-traits" rows="4"></textarea>
+                    </div>
+                    <div id="ideals" class="w3-col w3-padding m6 l3">
+                        <span class="label">Ideals</span>
+                        <textarea name="ideals" rows="4"></textarea>
+                    </div>
+                    <div id="bonds" class="w3-col w3-padding m6 l3">
+                        <span class="label">Bonds</span>
+                        <textarea name="bonds" rows="4"></textarea>
+                    </div>
+                    <div id="flaws" class="w3-col w3-padding m6 l3">
+                        <span class="label">Flaws</span>
+                        <textarea name="flaws" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Backstory -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Backstory</button>
+                <div id="character-background" class="w3-padding w3-animate-opacity">
+                    <div id="backstory" class="w3-col w3-padding m6 l6">
+                        <span class="label">Character Backstory</span>
+                        <textarea name="backstory" rows="30"></textarea>
+                    </div>
+                    <div id="apperance" class="w3-col w3-padding m6 l6">
+                        <span class="label">Character Apperance</span>
+                        <div id="char-img" class="w3-card w3-round"></div>
+                    </div>
+                    <div id="allies-organizations" class="w3-col w3-padding w3-center w3-round w3-border m6 l6">
+                        <div id="name" class="w3-col w3-padding l6">
+                            <input type="text" name="name" />
+                            <span class="label">Organization or Guild</span>
+                        </div>
+                        <div id="symbol" class="w3-col w3-padding l6">
+                            <span class="label">Symbol</span>
+                            <div id="alli-img" class="w3-round"></div>
+                        </div>
+                        <div class="w3-col">
+                            <span class="label">Allies and Organizations</span>
+                            <textarea name="allies-organizations" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page 5 -->
+        <!-- Page 5 -->
+        <!-- Page 5 -->
+        <div id="page-5" class="page w3-container w3-content w3-margin-top" style="display:none">
+            <!-- Notes -->
+            <div class="w3-col w3-margin-bottom w3-card w3-round">
+                <button class="expando w3-button w3-bar-block w3-left-align w3-blue-gray">Notes</button>
+                <div id="notes-page" class="w3-animate-opacity">
+                    <div id="notes-1" class="w3-col w3-padding m6 l6">
+                        <textarea name="notes-1" rows="15"></textarea>
+                    </div>
+                    <div id="notes-2" class="w3-col w3-padding m6 l6">
+                        <textarea name="notes-2" rows="15"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <!-- Footer -->
+        <!-- Footer -->
+        <footer class="page-width w3-container w3-content">
+            <div class="footer w3-blue-gray w3-round w3-padding">
+                DnD 5<sup>th</sup> Edition Character Sheet || Created by <a href="https://github.com/Chee32" target="_blank">Chee32</a> & <a href="https://github.com/lckynmbrsvn" target="_blank">lckynmbrsvn</a> ||
+                <a href="https://github.com/lckynmbrsvn/5e-Character-Sheet" target="_blank">GitHub Project</a>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
