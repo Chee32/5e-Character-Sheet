@@ -1,7 +1,7 @@
 # Dungeons & Dragons 5th Edition Character Sheet
 ### A New and Modern Character Sheet for 5th edition Dungeons & Dragons.
 #### About:
-The main idea behind this sheet is easy access to common character information and auto calculation & population of fields.
+The main idea behind this sheet is easy access to common character information and auto calculation & population of fields. To see a demo, [click here](https://lckynmbrsvn.github.io/DnD-5e-Character-Sheet/) 
 
 Currently, this is meant to be an offline character sheet for the game of Dungeons and Dragons. It has been rewritten to have a modern responsive layout in w3's lightweight css.
 
@@ -10,7 +10,7 @@ The only part that relies on connecting online is the use of FontAwesome, which 
 A default Character Sheet has been made to show how this form is meant to be used.  This includes a 'saveSheet.json', 'character.jpeg', and 'symbol.jpeg'. 
 
 #### Credits:
-This project was forked from: https://github.com/Chee32/5e-Character-Sheet. Credit goes to Chee32 for the JQuery which remains largely unchanged.
+This project was forked from [here](https://github.com/Chee32/5e-Character-Sheet). Credit goes to Chee32 for the JQuery which remains largely unchanged.
 
 ## Things to know when using this sheet.
 ### How to:
