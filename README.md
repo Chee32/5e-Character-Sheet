@@ -52,6 +52,8 @@ Some fields do not auto-populate based off of the attributes.
 
 ## Changes & Planned Updates.
 ### Changes:
+##### Hotfix -v2.1.3
+- Hotfix for broken navigation
 ##### Better JQuery & More -v2.1.2
 - Updated JQuery for expanding and collapsing panels
 - Added a 'Scroll To Top' button
