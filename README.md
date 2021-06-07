@@ -52,7 +52,7 @@ Some fields do not auto-populate based off of the attributes.
 
 ## Changes & Planned Updates.
 ### Changes:
-##### Better JQuery & More -v2.x.x
+##### Better JQuery & More -v2.1.2
 - Updated JQuery for expanding and collapsing panels
 - Added a 'Scroll To Top' button
 ##### Hotfixes -v2.1.1:
